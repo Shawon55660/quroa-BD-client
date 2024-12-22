@@ -5,21 +5,32 @@ import Card from "../allComponents/Card";
 
 
 const Queries = () => {
+    const [search,setSearch] =useState('')
+    
  const[data,allData] = useState([])
     useEffect(()=>{
-        fetchAllQuery()
-    },[])
-    const fetchAllQuery = async()=>{
+        const fetchAllQuery = async()=>{
 
-        const {data} = await axios.get(`${import.meta.env.VITE_localURL}/all-query`)
-        allData(data)
-    }
+            const {data} = await axios.get(`${import.meta.env.VITE_localURL}/all-query?search=${search}`)
+            allData(data)
+        }
+        fetchAllQuery()
+        
+    },[search])
+    
+   
 
     return (
         <div>
+            <div className="flex justify-center">
+                <input onChange={e=> setSearch(e.target.value)}
+                type="text"
+                 placeholder="serach Query by title" 
+                 className="outline-none rounded-md border-black border-[1px] px-4 py-2" /> 
+            </div>
               <div  className="grid md:grid-cols-2 my-12 lg:grid-cols-3 gap-3">
             {data.map(post=> <Card key={post._id} post={post}></Card>)}
-
+ 
           </div>
             
         </div>

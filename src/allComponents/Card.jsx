@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { format } from 'date-fns';
 import { Link } from 'react-router-dom';
@@ -14,7 +15,7 @@ const Card = ({post}) => {
                         alt="Shoes" />
                 </figure>
                 <div className="card-body">
-                    <h2 className="card-title">{owner_email}</h2>
+                    <h2 className="card-title">{productName}</h2>
                   <p>Posted Time: {format(new Date(currentData), 'Pp')}</p>
                     <p>{productName}</p>
                     <p>RecommendationCount {recommendationCount}</p>

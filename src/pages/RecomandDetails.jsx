@@ -4,6 +4,7 @@ import { format } from 'date-fns';
 import  { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
+import toast from 'react-hot-toast';
 
 const RecomandDetails = () => {
     const{user} = useContext(AuthContext)
@@ -32,6 +33,7 @@ const RecomandDetails = () => {
         const recProductImageURL = form.productImageURL.value;
         const recQueryTitle = form.queryTitle.value;
         const recReason = form.boycottReason.value;
+        const recommand_id = id;
 
         //owner data
         const recommender_email = user?.email
@@ -39,11 +41,23 @@ const RecomandDetails = () => {
        const recommender_photo = user?.photoURL;
        const currentData = time;
 
-       const recommonderInfo = {recProductName,recProductBrand,recProductImageURL,recQueryTitle,recReason,recommender_email,recommender_disPlayName,recommender_photo,currentData};
+       const recommonderInfo = {recProductName,recProductBrand,recProductImageURL,recQueryTitle,recReason,recommender_email,recommender_disPlayName,recommender_photo,currentData,recommand_id,owner_email};
        
-       
+       if(owner_email ==recommender_email) return toast.error(`you can't recommanded your query!!!`)
 
+       axios.post(`${import.meta.env.VITE_localURL}/recommanded`,recommonderInfo)
+       .then(data=>{
+        if(data.data.acknowledged) toast.success('Recommendation successfully')
+            else{
+                toast.error('sorry you are already recommanded is post')
+            }
        
+      })
+     
+      .catch(error=>{
+        toast.error('server error try again')
+       
+      })
 
         }
        console.log(currentData)
