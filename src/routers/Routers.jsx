@@ -8,6 +8,9 @@ import AddQuery from "../pages/AddQuery";
 import Queries from "../pages/Queries";
 import OtherRecmond from "../pages/OtherRecmond";
 import MyRecomd from "../pages/MyRecomd";
+import QueryDetails from "../pages/QueryDetails";
+import QueryUpdate from "../pages/QueryUpdate";
+import RecomandDetails from "../pages/RecomandDetails";
 
 const router = createBrowserRouter([
     {
@@ -25,16 +28,34 @@ const router = createBrowserRouter([
             },
             {
                 path:'/my-queries',
-                element: <PrivateRouter> <MyQueries></MyQueries></PrivateRouter>
+                element: <PrivateRouter> <MyQueries></MyQueries></PrivateRouter>,
+                
             },
             {
-                path:'/add-query',
+                path:'/my-queries/add-query',
                 element: <PrivateRouter> <AddQuery></AddQuery></PrivateRouter>
             },
+            {
+                path:'/my-queries/query-details/:id',
+                element:<QueryDetails></QueryDetails>,
+                loader:({params})=> fetch(`http://localhost:3000/query/details/${params.id}`)
+            },
+            {
+                path:'/queries/details/:id',
+                element: <PrivateRouter><RecomandDetails></RecomandDetails></PrivateRouter>,
+                
+            },
+            {
+                path:'/my-queries/query-update/:id',
+                element: <PrivateRouter><QueryUpdate></QueryUpdate></PrivateRouter>
+            },
+
+
             {
                 path: '/Recommendations-For-Me',
                 element: <PrivateRouter><OtherRecmond></OtherRecmond></PrivateRouter>
             },
+           
             {
                 path:'/My-recommendations',
                 element: <PrivateRouter><MyRecomd></MyRecomd></PrivateRouter>
