@@ -18,7 +18,7 @@ const Login = () => {
 const [showPass, setShowPass] = useState(false);
 const handlePassShow = () => setShowPass(!showPass)
 
-const {user,setUser,login,googleLogin}  = useContext(AuthContext)
+const {setUser,login,googleLogin}  = useContext(AuthContext)
 
 
 const handleGoogle = ()=>{

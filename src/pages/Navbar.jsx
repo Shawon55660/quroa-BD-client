@@ -13,8 +13,8 @@ const Navbar = () => {
 
   const handleLogOut = () => {
     logOut()
-      .then(users => {
-
+      .then(() => {
+       
         alert('logOut successfully')
       })
       .catch(error => {
@@ -22,15 +22,15 @@ const Navbar = () => {
       })
   }
   const withUser = <>
-    <NavLink><li>Recommendations For Me</li></NavLink>
-    <NavLink><li>My Queries</li></NavLink>
-    <NavLink><li>My recommendations</li></NavLink>
+    <li><NavLink to='/Recommendations-For-Me'>Recommendations For Me</NavLink></li>
+    <li><NavLink to='/my-queries'>My Queries</NavLink></li>
+    <li><NavLink to='/My-recommendations'>My recommendations</NavLink></li>
 
   </>
 
   const mainList = <>
-    <NavLink to='/'><li>Home</li></NavLink>
-    <NavLink><li>Queries</li></NavLink>
+    <li><NavLink to='/'>Home</NavLink></li>
+    <li><NavLink to='/queries'>Queries</NavLink></li>
   </>
   return (
     <div>
@@ -63,7 +63,7 @@ const Navbar = () => {
           <a className="btn btn-ghost text-xl">Quora BD</a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
+          <ul className="menu menu-horizontal gap-2 px-1">
             {mainList}
 
             {user?.email && withUser}
