@@ -21,8 +21,9 @@ useEffect(()=>{
     return (
         <div className="w-11/12 mx-auto">
         
-          <div> <button className="btn btn-success"><Link to='/my-queries/add-query'>Add Query</Link></button></div>
-          <div  className="grid md:grid-cols-2 my-12 lg:grid-cols-3 gap-3">
+          <div className="w-11/12 mx-auto text-center" > <h2 className="text-2xl my-4 font-semibold">My Query List  </h2> 
+            <button className="bg-[#380F8F] text-white px-4 py-1 rounded-md  "><Link to='/my-queries/add-query'>Add More</Link></button></div>
+          <div  >
             {queryData.map(query=> <QueryCard key={query._id} fetchData = {fetchData} query={query}></QueryCard>)}
 
           </div>

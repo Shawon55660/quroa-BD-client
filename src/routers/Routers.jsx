@@ -12,12 +12,18 @@ import QueryDetails from "../pages/QueryDetails";
 import QueryUpdate from "../pages/QueryUpdate";
 import RecomandDetails from "../pages/RecomandDetails";
 import Error from "../pages/Error";
+import Home from "../pages/Home";
 
 const router = createBrowserRouter([
     {
         path:'/',
         element: <Main></Main>,
         children:[
+            
+            {
+                index:true,
+                element: <Home></Home>
+            },
             {
                 path:'/login',
                 element: <Login></Login>

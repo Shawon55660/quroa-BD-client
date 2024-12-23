@@ -2,12 +2,13 @@
 import axios from 'axios';
 import  { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 //http://localhost:3000/query/details/${params.id}
 const QueryUpdate = () => {
     const {id} = useParams()
     const [query,setQuery] = useState([])
+    const navigate = useNavigate()
     const {owner_email,productName,productBrand,productImageURL,queryTitle,boycottReason,recommendationCount,currentData,owner_photo,owner_disPlayName} = query
 
     useEffect(()=>{
@@ -39,6 +40,7 @@ const QueryUpdate = () => {
       axios.patch(`${import.meta.env.VITE_localURL}/query-update/${id}`,postInfo)
       .then(data=>{
         if(data.data) toast.success('data updated successfully')
+            navigate('/my-queries')
        
       })
       .catch(error=>{
@@ -54,7 +56,7 @@ const QueryUpdate = () => {
         
         className="max-w-lg mx-auto bg-white shadow-lg p-6 rounded-lg"
     >
-        <h2 className="text-2xl font-bold mb-6 text-center">Update Query</h2>
+        <h2 className="text-2xl font-bold mb-6 text-[#380F8F] text-center">Update Query</h2>
 
         {/* Product Name */}
         <div className="mb-4">
@@ -133,9 +135,9 @@ const QueryUpdate = () => {
         {/* Submit Button */}
         <button
             type="submit"
-            className="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition duration-300"
+            className="w-full bg-[#380F8F] text-white py-3 rounded-lg  transition duration-300"
         >
-            Add Query
+            Update Query
         </button>
 
     </form>

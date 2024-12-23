@@ -61,7 +61,7 @@ const Login = () => {
         e.target.reset()
 
       })
-      .catch(error => {
+      .catch(() => {
        toast.error('Login failed please try again')
       })
   }

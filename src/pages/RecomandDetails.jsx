@@ -2,13 +2,14 @@
 import axios from 'axios';
 import { format } from 'date-fns';
 import  { useContext, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import toast from 'react-hot-toast';
 
 const RecomandDetails = () => {
     const{user} = useContext(AuthContext)
     const {id} = useParams()
+    const navigate  = useNavigate()
    
     const [query,setQuery] = useState([])
     const [time,setTime] = useState(new Date())
@@ -47,7 +48,10 @@ const RecomandDetails = () => {
 
        axios.post(`${import.meta.env.VITE_localURL}/recommanded`,recommonderInfo)
        .then(data=>{
-        if(data.data.acknowledged) toast.success('Recommendation successfully')
+        if(data.data.acknowledged) {
+            navigate('/queries') 
+            toast.success('Recommendation successfully')
+        }
             else{
                 toast.error('sorry you are already recommanded is post')
             }
@@ -151,7 +155,7 @@ const RecomandDetails = () => {
         {/* Submit Button */}
         <button
             type="submit"
-            className="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition duration-300"
+            className="w-full bg-[#380F8F] text-white py-3 rounded-lg  transition duration-300"
         >
             Recommended
         </button>

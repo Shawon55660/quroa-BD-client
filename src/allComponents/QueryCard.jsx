@@ -4,40 +4,53 @@
 import axios from "axios";
 import { format } from "date-fns";
 import toast from "react-hot-toast";
+import { LiaEyeSolid } from "react-icons/lia";
+import { MdWatchLater } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 
-const QueryCard = ({query,fetchData}) => {
-    const   {_id,owner_email,productName,productBrand,productImageURL,queryTitle,boycottReason,recommendationCount,currentData,owner_photo,owner_disPlayName} = query;
-    const handleDelete =async(id)=>{
-        const {data} = await axios.delete(`${import.meta.env.VITE_localURL}/query-delete/${id}`)
-       if(data.deletedCount){
-        fetchData()
-        toast.success('delete data successfully')
-       }
-     
+const QueryCard = ({ query, fetchData }) => {
+    const { _id, owner_email, productName, productBrand, productImageURL, queryTitle, boycottReason, recommendationCount, currentData, owner_photo, owner_disPlayName } = query;
+    const handleDelete = async (id) => {
+        const { data } = await axios.delete(`${import.meta.env.VITE_localURL}/query-delete/${id}`)
+        if (data.deletedCount) {
+            fetchData()
+            toast.success('delete data successfully')
+        }
+
     }
     return (
         <div>
-            <div className="card bg-base-100 w-96 shadow-xl">
-                <figure>
-                    <img
-                        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                        alt="Shoes" />
-                </figure>
-                <div className="card-body">
-                    <h2 className="card-title">{owner_email}</h2>
-                  <p>Deadline: {format(new Date(currentData), 'Pp')}</p>
-                    <p>{productName}</p>
-                    <div className="card-actions justify-end">
-                        <button className="btn btn-warning"><Link to={`/my-queries/query-details/${_id}`}>Details</Link></button>
-                        <button className="btn btn-primary"><Link to={`/my-queries/query-update/${_id}`} >Update</Link></button>
 
-                        <button onClick={()=>handleDelete(_id)}  className="btn btn-error">Delete</button>
+            <div className="md:grid md:grid-cols-8 gap-4 my-6  items-center  border-b-[1px] pb-2">
+                <div className="col-span-2   px-4 ">
+                    <img referrerPolicy="no-referrer" className="mx-auto  md:w-[300px]  rounded-md " src={productImageURL} alt="#" />
+                </div>
+                <div className="col-span-6 px-4 ">
+                    <div>
+                        <h2 className="text-xl font-semibold pb-1">{queryTitle}</h2>
+
+                        <p className="pb-2 font-semibold text-gray-600"> {productName}</p>
+
+                        <div className=" md:flex gap-8 pb-4 text-gray-600">
+                            <div className="flex gap-2 items-center"> <MdWatchLater /><p> {format(new Date(currentData), 'P')}</p></div>
+                            <div className="flex gap-4 items-center">  <LiaEyeSolid />  <p>{recommendationCount} recommended</p></div>
+                        </div>
+                        <p className="pr-4 text-gray-600 text-sm ">{boycottReason}</p>
                     </div>
+                   
+                   <div className="flex mt-2 gap-2">
+                   <button className=' bg-yellow-500 text-white px-4 py-1 rounded-t-md rounded-b-md'><Link to={`/my-queries/query-details/${_id}`}>Details</Link></button>
+                    <button className=' bg-[#380F8F] text-white px-4 py-1 rounded-t-md rounded-b-md'><Link to={`/my-queries/query-update/${_id}`} >Update</Link></button>
+
+                    <button onClick={() => handleDelete(_id)} className=' bg-red-500 text-white px-4 py-1 rounded-t-md rounded-b-md'>Delete</button>
+                   </div>
                 </div>
             </div>
+
+
         </div>
+
     );
 };
 
