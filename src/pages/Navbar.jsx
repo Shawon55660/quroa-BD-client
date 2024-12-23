@@ -1,13 +1,15 @@
 import { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import { CgProfile } from "react-icons/cg";
 import { Tooltip } from "react-tooltip";
+import Swal from "sweetalert2";
 
 
 const Navbar = () => {
 
   const { user, logOut } = useContext(AuthContext)
+  const navigate = useNavigate()
 
 
 
@@ -15,8 +17,13 @@ const Navbar = () => {
     logOut()
       .then(() => {
        
-        alert('logOut successfully')
+       Swal.fire({
+                     title: "Logout Successfully ",
+                     icon: "success",
+                     draggable: true
+                   });
       })
+      navigate('/login')
       .catch(error => {
         alert(error)
       })
@@ -60,7 +67,10 @@ const Navbar = () => {
 
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">Quora BD</a>
+          <div className="flex items-center gap-2">
+            <a className="text-2xl font-bold">Quora </a>
+          <img className="mx-auto my-2" src="https://img.icons8.com/?size=30&id=lR3GPGorCbvp&format=png&color=000000" alt="" />
+          </div>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal gap-2 px-1">
@@ -72,7 +82,7 @@ const Navbar = () => {
 
           </ul>
         </div>
-        <div className="navbar-end">
+        <div className="navbar-end gap-2">
           {
             user?.photoURL ? <img
               className='w-[50px] h-[50px] z-40 rounded-full'
@@ -86,8 +96,8 @@ const Navbar = () => {
           }
 
           <Tooltip className='z-40' id="my-tooltip" />
-          {user?.email && <button className="btn btn-warning" onClick={handleLogOut}>logOut</button>}
-          {!user && <NavLink to='/login'><button className="btn btn-success text-white">Log-in</button></NavLink>}
+          {user?.email && <button className="py-2 px-4 rounded-sm  font-semibold bg-[#380F8F] text-white" onClick={handleLogOut}>logOut</button>}
+          {!user && <NavLink to='/login'><button className="py-2 px-4 rounded-sm  font-semibold bg-[#380F8F] text-white">Log-in</button></NavLink>}
         </div>
       </div>
     </div>

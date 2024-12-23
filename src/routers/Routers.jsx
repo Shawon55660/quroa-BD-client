@@ -11,6 +11,7 @@ import MyRecomd from "../pages/MyRecomd";
 import QueryDetails from "../pages/QueryDetails";
 import QueryUpdate from "../pages/QueryUpdate";
 import RecomandDetails from "../pages/RecomandDetails";
+import Error from "../pages/Error";
 
 const router = createBrowserRouter([
     {
@@ -37,7 +38,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/my-queries/query-details/:id',
-                element:<QueryDetails></QueryDetails>,
+                element:<PrivateRouter><QueryDetails></QueryDetails></PrivateRouter>,
                 loader:({params})=> fetch(`http://localhost:3000/query/details/${params.id}`)
             },
             {
@@ -68,7 +69,7 @@ const router = createBrowserRouter([
 
         ],
         
-        errorElement: <h2>hello i am from error</h2>
+        errorElement: <Error></Error>
         
     }
 
