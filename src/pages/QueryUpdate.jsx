@@ -54,12 +54,14 @@ const QueryUpdate = () => {
         <div>
            <form onSubmit={UpdateData}
         
-        className="max-w-lg mx-auto bg-white shadow-lg p-6 rounded-lg"
+        className="max-w-4xl mx-auto bg-white shadow-lg p-6 rounded-lg"
     >
         <h2 className="text-2xl font-bold mb-6 text-[#380F8F] text-center">Update Query</h2>
 
-        {/* Product Name */}
-        <div className="mb-4">
+       <div className='md:flex gap-2' >
+       <div className='w-full'>
+         {/* Product Name */}
+         <div className="mb-4">
             <label className="block text-gray-700 font-medium mb-2">
                 Product Name:
             </label>
@@ -87,8 +89,10 @@ const QueryUpdate = () => {
                 className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
         </div>
+       </div>
 
-        {/* Product Image URL */}
+        <div className='w-full'>
+            {/* Product Image URL */}
         <div className="mb-4">
             <label className="block text-gray-700 font-medium mb-2">
                 Product Image URL:
@@ -117,6 +121,8 @@ const QueryUpdate = () => {
                 className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
         </div>
+        </div>
+       </div>
 
         {/* Boycotting Reason */}
         <div className="mb-4">

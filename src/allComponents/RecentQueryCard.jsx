@@ -21,11 +21,12 @@ const RecentQueryCard = ({post}) => {
                 
                 <p className="pb-2 font-semibold text-gray-600"> {productName}</p>
              
-            <div className=" md:flex gap-8 pb-4 text-gray-600">
+           
+            <p  className="pr-4 text-gray-600 text-sm ">{boycottReason}</p>
+            <div className=" md:flex gap-8 pt-4 text-gray-600">
            <div className="flex gap-2 items-center"> <MdWatchLater /><p> {format(new Date(currentData), 'P')}</p></div>
          <div className="flex gap-4 items-center">  <LiaEyeSolid />  <p>{recommendationCount} recommended</p></div>
             </div>
-            <p  className="pr-4 text-gray-600 text-sm ">{boycottReason}</p>
                </div>
                <div>
                <Link to={`/queries/details/${_id}`}><button className=' bg-[#380F8F] text-white px-4 py-1 rounded-t-md rounded-b'>Recommendation </button></Link>
