@@ -1,8 +1,10 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
 import { createContext, useEffect, useState } from 'react';
 import { auth } from '../firebase/firebase.init';
 import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import axios from 'axios';
 export const AuthContext = createContext()
 
 const AuthProvider = ({ children }) => {
@@ -45,8 +47,15 @@ const AuthProvider = ({ children }) => {
     }
 
     useEffect(() => {
-        const unsubcribe = onAuthStateChanged(auth, user => {
-            setUser(user)
+        const unsubcribe = onAuthStateChanged(auth, async user => {
+            if(user?.email){
+                setUser(user)
+                const {data} = await axios.post(`${import.meta.env.VITE_localURL}/jwt`,{email:user?.email},{withCredentials:true})
+            }
+            else{
+                setUser(user)
+                const {data} =  await axios.get(`${import.meta.env.VITE_localURL}/tokenLogout`,{withCredentials:true})
+            }
             setLoader(false)
         })
         return () => {

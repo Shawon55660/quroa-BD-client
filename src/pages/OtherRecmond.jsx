@@ -1,18 +1,23 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react-hooks/exhaustive-deps */
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import AxiosUses from "../hooks/AxiosUses";
 
 
 const OtherRecmond = () => {
     const {user} =useContext(AuthContext)
     const [recData,setRecData] = useState([])
+    const axiosSecure = AxiosUses()
     useEffect(()=>{
         fetchDataRec()
-    },[])
+    },[user])
 
     const fetchDataRec = async()=>{
-        const {data} = await axios.get(`${import.meta.env.VITE_localURL}/recommendation-for-me?owner_email=${user?.email}`)
-
+      
+        // const {data} = await axios.get(`${import.meta.env.VITE_localURL}/recommendation-for-me?owner_email=${user?.email}`,{withCredentials:true})
+         const {data} =await axiosSecure.get(`/recommendation-for-me?owner_email=${user?.email}`)
         setRecData(data)
 
     }

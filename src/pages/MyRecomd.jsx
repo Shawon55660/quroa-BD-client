@@ -3,11 +3,13 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { FaDeleteLeft } from "react-icons/fa6";
 import toast from "react-hot-toast";
+import AxiosUses from "../hooks/AxiosUses";
 
 
 const MyRecomd = () => {
     const {user} =useContext(AuthContext)
     const [recData,setRecData] = useState([])
+    const axiosSecure = AxiosUses()
     useEffect(()=>{
         fetchDataRec()
     },[])
@@ -15,7 +17,8 @@ const MyRecomd = () => {
     
 
     const fetchDataRec = async()=>{
-        const {data} = await axios.get(`${import.meta.env.VITE_localURL}/my-recommendation?recommender_email=${user?.email}`)
+        // const {data} = await axios.get(`${import.meta.env.VITE_localURL}/my-recommendation?recommender_email=${user?.email}`, {withCredentials:true})
+        const {data} = await axiosSecure.get(`/my-recommendation?recommender_email=${user?.email}`)
 
         setRecData(data)
 

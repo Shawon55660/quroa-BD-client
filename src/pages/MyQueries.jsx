@@ -1,20 +1,24 @@
+/* eslint-disable no-unused-vars */
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import axios from "axios";
 import QueryCard from "../allComponents/QueryCard";
+import AxiosUses from "../hooks/AxiosUses";
 
 const MyQueries = () => {
     
 const {user} = useContext(AuthContext)
 const [queryData,setQueryData] = useState([])
+const axiosSecure = AxiosUses()
 
 useEffect(()=>{
     fetchData()
 // eslint-disable-next-line react-hooks/exhaustive-deps
 },[user])
     const fetchData = async()=>{
-        const {data} = await axios.get(`${import.meta.env.VITE_localURL}/my-query?owner_email=${user?.email}`)
+        // const {data} = await axios.get(`${import.meta.env.VITE_localURL}/my-query?owner_email=${user?.email}`,{withCredentials:true})
+        const {data} = await axiosSecure.get(`/my-query?owner_email=${user?.email}`)
         setQueryData(data)
     }
 

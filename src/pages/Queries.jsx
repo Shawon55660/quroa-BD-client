@@ -1,10 +1,13 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Card from "../allComponents/Card";
+import { AuthContext } from "../Provider/AuthProvider";
+import Loader from "../allComponents/Loader";
 
 
 
 const Queries = () => {
+    const{loader} = useContext(AuthContext)
     const [search,setSearch] =useState('')
     
  const[data,allData] = useState([])
@@ -21,6 +24,7 @@ const Queries = () => {
    
 
     return (
+
         <div>
             <div className="flex justify-center">
                 <input onChange={e=> setSearch(e.target.value)}
@@ -28,7 +32,9 @@ const Queries = () => {
                  placeholder="serach Query by title" 
                  className="outline-none rounded-md border-black border-[1px] px-4 py-2" /> 
             </div>
+           
               <div className="w-10/12 mx-auto my-12">
+              
             {data.map(post=> <Card key={post._id} post={post}></Card>)}
  
           </div>
