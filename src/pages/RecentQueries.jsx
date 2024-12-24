@@ -2,6 +2,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import RecentQueryCard from '../allComponents/RecentQueryCard';
+import { Link } from 'react-router-dom';
 
 const RecentQueries = () => {
 
@@ -25,6 +26,10 @@ const RecentQueries = () => {
            {
             recent.map(post=> <RecentQueryCard key={post._id}  post={post}></RecentQueryCard>)
            }
+
+           <div>
+           <Link to='/queries'> <button className='bg-[#EF4444] text-white px-4 py-2 rounded-sm'>See All Query</button></Link>
+           </div>
         </div>
     );
 };

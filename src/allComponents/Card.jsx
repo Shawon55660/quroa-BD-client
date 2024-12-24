@@ -22,8 +22,7 @@ const Card = ({post}) => {
         const {data} = await axios.get(`${import.meta.env.VITE_localURL}/recommend-id?recommand_id=${_id}`)
         setComment(data)
     }
-    // console.log(comment)
-    console.log(owner_disPlayName)
+ 
     return (
         <div className="md:grid md:grid-cols-8 gap-4 mt-12 items-start border-b-[1px] pb-2">
                     <div className="col-span-2   px-4 md:border-[#380F8F] md:border-r-[1px]">
@@ -36,7 +35,7 @@ const Card = ({post}) => {
                         <div className='flex gap-2 items-start my-2 '>
                             <img src={owner_photo} className='w-10 h-10 rounded-full' alt="" />
                            <div>
-                           <p className='font-semibold'>{owner_disPlayName}</p>
+                           <p className='font-semibold '>{owner_disPlayName}</p>
                            <p className='text-xs text-gray-400'>{format(new Date(currentData), 'PP')}</p>
                            </div>
                             
@@ -56,7 +55,7 @@ const Card = ({post}) => {
                         <div className='flex items-center gap-2 my-4  '>
                             <img className='w-10 rounded-full h-10 ' src={comment.recommender_photo} alt="" />
                             <div className='py-[2px] px-2 bg-gray-200 border-[1px rounded-md w-[300px]' >
-                            <p className='font-semibold'>{comment.recommender_disPlayName}</p>
+                            <p className='font-bold text-sm'>{comment.recommender_disPlayName}</p>
                             <p className='text-sm'>{comment.recProductName}</p>
                             </div>
 

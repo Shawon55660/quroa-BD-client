@@ -1,13 +1,11 @@
 import axios from "axios";
-import { useContext, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import Card from "../allComponents/Card";
-import { AuthContext } from "../Provider/AuthProvider";
-import Loader from "../allComponents/Loader";
 
 
 
 const Queries = () => {
-    const{loader} = useContext(AuthContext)
+   
     const [search,setSearch] =useState('')
     
  const[data,allData] = useState([])

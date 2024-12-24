@@ -44,7 +44,11 @@ const RecomandDetails = () => {
 
        const recommonderInfo = {recProductName,recProductBrand,recProductImageURL,recQueryTitle,recReason,recommender_email,recommender_disPlayName,recommender_photo,currentData,recommand_id,owner_email};
        
-       if(owner_email ==recommender_email) return toast.error(`you can't recommanded your query!!!`)
+       if(owner_email ==recommender_email) {
+        
+        navigate('/queries')
+        return toast.error(`you can't recommanded your query!!!`)
+    }
 
        axios.post(`${import.meta.env.VITE_localURL}/recommanded`,recommonderInfo)
        .then(data=>{
@@ -54,19 +58,21 @@ const RecomandDetails = () => {
         }
             else{
                 toast.error('sorry you are already recommanded is post')
+                navigate('/queries') 
             }
        
       })
      
       .catch(error=>{
         toast.error('server error try again')
+
        
       })
 
         }
        console.log(currentData)
     return (
-        <div className='grid md:grid-cols-6 gap-4 w-11/12 mx-auto my-12 justify-between'>
+        <div className='grid lg:grid-cols-6 gap-4 w-11/12 md:w-full lg:w-11/12 mx-auto my-12 justify-between'>
            <div className='col-span-2'>
             <div>
                 <p>Posted Email: {owner_email}</p>
@@ -79,11 +85,13 @@ const RecomandDetails = () => {
            </div>
            <div className='col-span-4'>
            <form onSubmit={handle}
-        className="max-w-lg  mx-auto bg-white shadow-lg p-6 rounded-lg"
+        className=" md:w-7/12 lg:w-full mx-auto bg-white shadow-lg p-6 rounded-lg"
     >
-        <h2 className="text-2xl font-bold mb-6 text-center">Recommended  Query</h2>
+        <h2 className="text-2xl font-bold text-[#EF4444] mb-6 text-center">Recommended  Query</h2>
 
-        {/* Product Name */}
+        <div className=' lg:grid lg:grid-cols-2 gap-4 justify-between'> 
+        <div>
+            {/* Product Name */}
         <div className="mb-4">
             <label className="block text-gray-700 font-medium mb-2">
             Recommended  Product Name:
@@ -110,9 +118,11 @@ const RecomandDetails = () => {
                 className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
         </div>
+        </div>
 
-        {/* Product Image URL */}
-        <div className="mb-4">
+       <div>
+         {/* Product Image URL */}
+         <div className="mb-4">
             <label className="block text-gray-700 font-medium mb-2">
             Recommended  Product Image URL:
             </label>
@@ -138,6 +148,8 @@ const RecomandDetails = () => {
                 className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
         </div>
+       </div>
+        </div>
 
         {/* Boycotting Reason */}
         <div className="mb-4">
@@ -155,7 +167,7 @@ const RecomandDetails = () => {
         {/* Submit Button */}
         <button
             type="submit"
-            className="w-full bg-[#380F8F] text-white py-3 rounded-lg  transition duration-300"
+            className="w-full bg-[#EF4444] text-white py-3 rounded-lg  transition duration-300"
         >
             Recommended
         </button>

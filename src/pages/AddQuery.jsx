@@ -45,11 +45,13 @@ const AddQuery = () => {
         <div>
              <form onSubmit={addData}
         
-            className="max-w-lg mx-auto bg-white shadow-lg p-6 rounded-lg"
+            className=" w-11/12 lg:w-9/12 mx-auto bg-white shadow-lg p-6 rounded-lg"
         >
-            <h2 className="text-2xl font-bold mb-6 text-center">Add Query</h2>
+            <h2 className="text-2xl font-bold mb-6 text-center text-[#380F8F]  ">Add Query</h2>
 
-            {/* Product Name */}
+           <div className="grid md:grid-cols-2 gap-4">
+           <div>
+                {/* Product Name */}
             <div className="mb-4">
                 <label className="block text-gray-700 font-medium mb-2">
                     Product Name:
@@ -76,8 +78,10 @@ const AddQuery = () => {
                     className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
             </div>
+            </div>
 
-            {/* Product Image URL */}
+            <div>
+                {/* Product Image URL */}
             <div className="mb-4">
                 <label className="block text-gray-700 font-medium mb-2">
                     Product Image URL:
@@ -104,6 +108,8 @@ const AddQuery = () => {
                     className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
             </div>
+            </div>
+           </div>
 
             {/* Boycotting Reason */}
             <div className="mb-4">
@@ -121,7 +127,7 @@ const AddQuery = () => {
             {/* Submit Button */}
             <button
                 type="submit"
-                className="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition duration-300"
+                className="w-full bg-[#380F8F]  text-white py-3 rounded-lg  transition duration-300"
             >
                 Add Query
             </button>
