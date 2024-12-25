@@ -41,7 +41,7 @@ const QueryCard = ({ query, fetchData }) => {
                    
                    <div className="flex mt-2 gap-2">
                    <button className=' bg-yellow-500 text-white px-4 py-1 rounded-t-md rounded-b-md'><Link to={`/my-queries/query-details/${_id}`}>Details</Link></button>
-                    <button className=' bg-[#380F8F] text-white px-4 py-1 rounded-t-md rounded-b-md'><Link to={`/my-queries/query-update/${_id}`} >Update</Link></button>
+                    <button className=' bg-gray-900 text-white px-4 py-1 rounded-t-md rounded-b-md'><Link to={`/my-queries/query-update/${_id}`} >Update</Link></button>
 
                     <button onClick={() => handleDelete(_id)} className=' bg-red-500 text-white px-4 py-1 rounded-t-md rounded-b-md'>Delete</button>
                    </div>

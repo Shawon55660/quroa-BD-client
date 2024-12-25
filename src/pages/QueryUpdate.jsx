@@ -56,7 +56,7 @@ const QueryUpdate = () => {
         
         className="max-w-4xl mx-auto bg-white shadow-lg p-6 rounded-lg"
     >
-        <h2 className="text-2xl font-bold mb-6 text-[#380F8F] text-center">Update Query</h2>
+        <h2 className="text-2xl font-bold mb-6 text-gray-800 text-center">Update Query</h2>
 
        <div className='md:flex gap-2' >
        <div className='w-full'>
@@ -124,7 +124,7 @@ const QueryUpdate = () => {
         </div>
        </div>
 
-        {/* Boycotting Reason */}
+        
         <div className="mb-4">
             <label className="block text-gray-700 font-medium mb-2">
                 Boycotting Reason Details:
@@ -138,10 +138,10 @@ const QueryUpdate = () => {
             ></textarea>
         </div>
 
-        {/* Submit Button */}
+        
         <button
             type="submit"
-            className="w-full bg-[#380F8F] text-white py-3 rounded-lg  transition duration-300"
+            className="w-full bg-gray-800 text-white py-3 rounded-lg  transition duration-300"
         >
             Update Query
         </button>

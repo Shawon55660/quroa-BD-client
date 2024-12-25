@@ -103,11 +103,11 @@ const Card = ({ post }) => {
                                     </div>
                                 )}
                                 {comment?.length > 1 && (
-                                    <button
+                                    <button className='font-semibold border-t-[1px] pt-2 w-full'
                                         onClick={() => setShowAllComments(!showAllComments)}
 
                                     >
-                                        {showAllComments ? 'Show Less' : 'See All Comments'}
+                                        {showAllComments ? 'Show Less' : 'See All Comments...'}
                                     </button>
                                 )}
                             </>
@@ -120,8 +120,8 @@ const Card = ({ post }) => {
 
 
             </div>
-            <div className=''>
-                <Link to={`/queries/details/${_id}`}><button className=' bg-[#380F8F] text-sm text-white px-2 py-1 rounded-t-md rounded-b'> Recommendation </button></Link>
+            <div className='text-center w-full'>
+                <Link to={`/queries/details/${_id}`}><button className=' bg-gray-900  text-sm text-white px-2 py-1 rounded-t-md rounded-b'> Recommendation </button></Link>
             </div>
 
         </div>

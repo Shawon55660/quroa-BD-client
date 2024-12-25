@@ -26,12 +26,12 @@ const OtherRecmond = () => {
 
 <div className="p-8 bg-gradient-to-r from-gray-50 to-gray-200 min-h-screen flex  justify-center">
 <div className="w-full max-w-6xl bg-white shadow-xl rounded-lg overflow-hidden">
-  <div className="bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-lg font-semibold p-5 text-center">
+  <div className="bg-gradient-to-r from-gray-900 to-gray-800 text-white text-lg font-semibold p-5 text-center">
     Recommendations Overview
   </div>
   <div className="overflow-x-auto">
     <table className="table-auto w-full text-sm text-left text-gray-700">
-      <thead className="bg-gradient-to-r from-indigo-600 to-purple-500 text-white">
+      <thead className="bg-gradient-to-r from-gray-600 to-gray-900 text-white">
         <tr>
           <th className="px-6 py-4 whitespace-nowrap">Recommendation Title</th>
           <th className="px-6 py-4 whitespace-nowrap">Product Name</th>

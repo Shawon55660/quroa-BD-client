@@ -11,7 +11,7 @@ const Section_1 = () => {
                 <div className="bg-red-500 ">
                     <Lottie animationData={question}></Lottie>
                 </div>
-                <div className="bg-[#380F8F] pl-8 pr-4 py-16 text-white">
+                <div className="bg-gray-900 pl-8 pr-4 py-16 text-white">
 
                     <h2 className="text-2xl font-bold py-3 text-[#EF4444]">Ask A Question</h2>
                     <h1 className="text-5xl leading-normal font-semibold py-2">Get Help From Professionals</h1>

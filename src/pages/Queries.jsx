@@ -25,7 +25,7 @@ const Queries = () => {
 
     }
    
-console.log(layout)
+
     return (
 
         <div className="pb-8" style={{ backgroundImage: `url(${bg})` }}>
@@ -35,9 +35,9 @@ console.log(layout)
                  placeholder="serach Query by title" 
                  className="outline-none rounded-md border-black border-[1px] px-4 py-2" />
                  <div className="lg:flex items-center  hidden  justify-center ">
-                <button onClick={()=>changeLayout('lg:grid-cols-1')} className={`bg-gray-800 rounded-sm py-1  px-6 text-white ${layout =='lg:grid-cols-1' && `bg-[#e44f4f]`}`}>Layout 1 </button>
-                <button onClick={()=>changeLayout('lg:grid-cols-2')} className={`bg-gray-800 rounded-sm py-1  px-6 text-white ${layout =='lg:grid-cols-2' && `bg-[#e44f4f]`}`}>Layout 2 </button>
-                <button onClick={()=>changeLayout('lg:grid-cols-3')} className={`bg-gray-800 rounded-sm py-1  px-6 text-white ${layout =='lg:grid-cols-3' && `bg-[#e44f4f]`}`}> Layout 3</button>
+                <button onClick={()=>changeLayout('lg:grid-cols-1')} className={`${layout == 'lg:grid-cols-1' ? 'bg-red-600':'bg-gray-800 '} rounded-sm py-1  px-6 text-white `}>Layout 1 </button>
+                <button onClick={()=>changeLayout('lg:grid-cols-2')} className={`${layout == 'lg:grid-cols-2' ? 'bg-red-600':'bg-gray-800 '} rounded-sm py-1  px-6 text-white `}>Layout 2 </button>
+                <button onClick={()=>changeLayout('lg:grid-cols-3')} className={ `${layout == 'lg:grid-cols-3' ? 'bg-red-600':'bg-gray-800 '} rounded-sm py-1  px-6 text-white `}> Layout 3</button>
                 
             </div> 
             </div>

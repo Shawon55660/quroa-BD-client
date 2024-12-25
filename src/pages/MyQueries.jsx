@@ -26,11 +26,16 @@ useEffect(()=>{
         <div className="w-11/12 mx-auto">
         
           <div className="w-11/12 mx-auto text-center" > <h2 className="text-2xl my-4 font-semibold">My Query List  </h2> 
-            <button className="bg-[#380F8F] text-white px-4 py-1 rounded-md  "><Link to='/my-queries/add-query'>Add More</Link></button></div>
-          <div  >
+            <button className="bg-gray-900 text-white px-4 py-1 rounded-md  "><Link to='/my-queries/add-query'>Add More</Link></button></div>
+          {
+            queryData?.length? <div  >
             {queryData.map(query=> <QueryCard key={query._id} fetchData = {fetchData} query={query}></QueryCard>)}
 
-          </div>
+          </div>: <div className="text-center"><p  className="text-3xl  my-12 text-[#e44f4f] font-bold">No Data Found In My Query</p>
+         </div>
+
+          
+          }
         </div>
     );
 };

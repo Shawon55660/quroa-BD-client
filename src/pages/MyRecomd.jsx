@@ -43,7 +43,7 @@ const MyRecomd = () => {
       <h2 className="text-2xl font-semibold text-gray-800 mb-6">Recommendations</h2>
       <div className="overflow-x-auto">
         <table className="w-full border-collapse border border-gray-300 rounded-lg">
-          <thead className="bg-gradient-to-r from-[#380F8F]  to-[#5a14f3] text-white">
+          <thead className="bg-gradient-to-r from-[#18171a]  to-[#201e24] text-white">
             <tr>
               <th className="px-4 py-3 text-left text-sm font-semibold uppercase">Title</th>
               <th className="px-4 py-3 text-left text-sm font-semibold uppercase">Product</th>
