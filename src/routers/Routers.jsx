@@ -45,7 +45,7 @@ const router = createBrowserRouter([
             {
                 path:'/my-queries/query-details/:id',
                 element:<PrivateRouter><QueryDetails></QueryDetails></PrivateRouter>,
-                loader:({params})=> fetch(`http://localhost:3000/query/details/${params.id}`)
+                loader:({params})=> fetch(`${import.meta.env.VITE_localURL}/query/details/${params.id}`)
             },
             {
                 path:'/queries/details/:id',

@@ -3,11 +3,13 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 
 const AddQuery = () => {
     const [time,setTime] = useState(new Date())
     const {user} = useContext(AuthContext)
+    const navigate = useNavigate()
 
     const addData = (e)=>{
 
@@ -31,7 +33,11 @@ const AddQuery = () => {
        
       axios.post(`${import.meta.env.VITE_localURL}/add-query`,postInfo)
       .then(data=>{
-        if(data.data.acknowledged) toast.success('data added successfully')
+        if(data.data.acknowledged) {
+            
+            toast.success('data added successfully')
+            return navigate('my-queries')
+        }
        
       })
       .catch(error=>{

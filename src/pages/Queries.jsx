@@ -25,7 +25,7 @@ const Queries = () => {
 
     }
    
-
+console.log(layout)
     return (
 
         <div style={{ backgroundImage: `url(${bg})` }}>
@@ -42,7 +42,7 @@ const Queries = () => {
                 
             </div>
            
-              <div  className= {`grid md:grid-cols-2  md:w-11/12  lg:grid-cols-${layout} ${layout== 1 && `max-w-2xl`} gap-4  mx-auto py-6`}>
+              <div  className= {``}>
               
             {data.map(post=> <Card key={post._id} post={post}></Card>)}
  

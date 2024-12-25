@@ -71,9 +71,15 @@ const RecomandDetails = () => {
                         <div>
                             <h3 className="text-2xl font-semibold text-gray-800">Owner Information</h3>
                             <div className="flex items-center space-x-4">
-                                <img src={owner_photo} alt="Owner" className="w-20 h-20 rounded-full object-cover" />
+                               {owner_photo?                                 <img src={owner_photo} alt="Owner" className="w-10 h-10 rounded-full object-cover" />:
+                               <div className="avatar placeholder">
+                               <div className="bg-neutral text-neutral-content w-10 h-10 rounded-full">
+                                   <span className="text-md">A</span>
+                               </div>
+                           </div>
+}
                                 <div>
-                                    <p className="font-medium text-gray-800">Name: <span className="text-[#EF4444]">{owner_disPlayName}</span></p>
+                                    <p className="font-medium text-gray-800">Name: <span className="text-[#EF4444]">{owner_disPlayName?owner_disPlayName:`Guest`}</span></p>
                                     <p className="text-sm text-gray-500">Email: {owner_email}</p>
                                 </div>
                             </div>
@@ -84,7 +90,7 @@ const RecomandDetails = () => {
                             <div className="space-y-2">
                                 <p><span className="font-semibold">Product Name:</span> {productName}</p>
                                 <p><span className="font-semibold">Product Brand:</span> {productBrand}</p>
-                                <p><span className="font-semibold">Product Image:</span> <img src={productImageURL} alt={productName} className="w-16 h-16 object-cover rounded-lg" /></p>
+                                <p><span className="font-semibold">Product Image:</span> <img src={productImageURL} alt={productName} className="w-full object-cover rounded-lg" /></p>
                             </div>
                         </div>
                     </div>
