@@ -19,30 +19,31 @@ const Queries = () => {
         fetchAllQuery()
         
     },[search])
-    const [layout ,setLayout] = useState(3)
-    const changeLayout = (id)=>{
-        setLayout(id)
+    const [layout ,setLayout] = useState('lg:grid-cols-3')
+    const changeLayout = (layout)=>{
+        setLayout(layout)
 
     }
    
 console.log(layout)
     return (
 
-        <div style={{ backgroundImage: `url(${bg})` }}>
-            <div className="flex justify-center pt-4">
+        <div className="pb-8" style={{ backgroundImage: `url(${bg})` }}>
+            <div className="flex items-center   justify-around pt-4 ">
                 <input onChange={e=> setSearch(e.target.value)}
                 type="text"
                  placeholder="serach Query by title" 
-                 className="outline-none rounded-md border-black border-[1px] px-4 py-2" /> 
-            </div>
-            <div className="lg:flex gap-3 hidden  justify-center mt-4">
-                <button onClick={()=>changeLayout(1)} className={`btn btn-neutral ${layout ==1 && `btn-warning`}`}>grid 1 </button>
-                <button onClick={()=>changeLayout(2)} className={`btn btn-neutral ${layout ==2 && `btn-warning`}`}>grid 2 </button>
-                <button onClick={()=>changeLayout(3)} className={`btn btn-neutral ${layout ==3 && `btn-warning`}`}>grid 3 </button>
+                 className="outline-none rounded-md border-black border-[1px] px-4 py-2" />
+                 <div className="lg:flex items-center  hidden  justify-center ">
+                <button onClick={()=>changeLayout('lg:grid-cols-1')} className={`bg-gray-800 rounded-sm py-1  px-6 text-white ${layout =='lg:grid-cols-1' && `bg-[#e44f4f]`}`}>Layout 1 </button>
+                <button onClick={()=>changeLayout('lg:grid-cols-2')} className={`bg-gray-800 rounded-sm py-1  px-6 text-white ${layout =='lg:grid-cols-2' && `bg-[#e44f4f]`}`}>Layout 2 </button>
+                <button onClick={()=>changeLayout('lg:grid-cols-3')} className={`bg-gray-800 rounded-sm py-1  px-6 text-white ${layout =='lg:grid-cols-3' && `bg-[#e44f4f]`}`}> Layout 3</button>
                 
+            </div> 
             </div>
+            
            
-              <div  className= {``}>
+              <div  className= {`grid ${layout} w-11/12  py-2  mx-auto gap-4 ${layout=='lg:grid-cols-1' && 'lg:w-5/12'} md:grid-cols-2 `}>
               
             {data.map(post=> <Card key={post._id} post={post}></Card>)}
  

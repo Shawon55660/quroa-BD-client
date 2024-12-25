@@ -69,8 +69,9 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="flex items-center gap-2">
-            <a className="text-2xl font-bold">Quora </a>
           <img className="mx-auto my-2" src="https://img.icons8.com/?size=30&id=lR3GPGorCbvp&format=png&color=000000" alt="" />
+            <a className="text-2xl font-bold">Quora </a>
+          
           </div>
         </div>
         <div className="navbar-center hidden lg:flex">

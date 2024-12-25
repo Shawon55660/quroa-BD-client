@@ -8,7 +8,7 @@ import data from '../animation/footer.json'
 const Footer = () => {
     return (
         <div>
-    <footer className="footer grid md:grid-cols-2 footer-center bg-gray-800 text-primary-content p-10">
+    <footer className=" grid md:grid-cols-2  w-full footer-center bg-gray-800 text-primary-content ">
   <div className="flex flex-col gap-4">
   <aside>
 <img className="mx-auto my-2" src="https://img.icons8.com/?size=80&id=lR3GPGorCbvp&format=png&color=000000" alt="" />
@@ -35,7 +35,7 @@ const Footer = () => {
   </nav>
   </div>
   <div>
-    <Lottie className="w-[400px] object-cover" animationData={data}></Lottie>
+    <Lottie className="md:w-[400px] object-cover" animationData={data}></Lottie>
   </div>
 
  

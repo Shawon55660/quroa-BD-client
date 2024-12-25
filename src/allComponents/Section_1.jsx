@@ -7,7 +7,7 @@ const Section_1 = () => {
     return (
         <div>
 
-            <div className="grid md:grid-cols-2  w-9/12 mx-auto my-16">
+            <div className="grid md:grid-cols-2 w-full  md:w-9/12 mx-auto my-16">
                 <div className="bg-red-500 ">
                     <Lottie animationData={question}></Lottie>
                 </div>
