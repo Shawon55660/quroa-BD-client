@@ -6,6 +6,7 @@ import 'swiper/css/navigation'
 import quesiotn from '../../src/assets/question.jpg'
 import quesiotn2 from '../../src/assets/question2.jpg'
 import quesiotn3 from '../../src/assets/question3.jpg'
+import { Link } from 'react-router-dom'
 
 const Bannar = () => {
     return (
@@ -35,15 +36,16 @@ const Bannar = () => {
         
         {/* Content Section */}
         <div className="relative z-10 text-center text-white py-32 px-6">
-          <h1 className="text-5xl font-extrabold mb-6 tracking-wide drop-shadow-xl animate__animated animate__fadeIn animate__delay-1s">
+          <h1 className="text-5xl font-extrabold mb-6   tracking-wide drop-shadow-xl animate__animated animate__fadeIn animate__delay-1s">
             Welcome to the Q&A Hub!
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl mb-8 max-w-2xl mx-auto drop-shadow-md animate__animated animate__fadeIn animate__delay-2s">
             Find answers to your questions, or ask your own! Explore a community of knowledge.
           </p>
-          <button className="bg-gradient-to-r from-[#380F8F] to-[#4a1dac] text-white py-3 px-8 rounded-full text-xl font-semibold hover:from-[#5e3da7] hover:to-[#380F8F] transform transition-all duration-300 ease-in-out">
+          <Link to='/my-queries'><button className="bg-gradient-to-r from-[#380F8F] to-[#4a1dac] text-white py-3 px-8 rounded-full text-lg font-semibold hover:from-[#5e3da7] hover:to-[#380F8F] transform transition-all duration-300 ease-in-out">
             Start Query
-          </button>
+          </button></Link>
+          
         </div>
       </div>
     </div>
@@ -67,9 +69,9 @@ const Bannar = () => {
             Find answers to your questions, ask your own, and be part of a thriving knowledge community.
           </p>
           {/* Button with an interactive effect */}
-          <button className="bg-blue-500 hover:bg-blue-600 text-white py-3 px-8 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transform transition-all duration-300 ease-in-out scale-100 hover:scale-110">
-            Start Asking
-          </button>
+          <Link to='/queries'><button className="bg-gradient-to-r from-[#380F8F] to-[#4a1dac] text-white py-3 px-8 rounded-full text-lg font-semibold hover:from-[#5e3da7] hover:to-[#380F8F] transform transition-all duration-300 ease-in-out">
+            See Query Answers
+          </button></Link>
         </div>
       </div>
     </div>
@@ -85,7 +87,7 @@ const Bannar = () => {
         {/* Content Section */}
         <div className="relative z-10 text-center text-white py-32 px-6">
           {/* Heading with bold text and cool effects */}
-          <h1 className="text-5xl font-bold mb-6 tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-500 animate__animated animate__fadeIn animate__delay-1s">
+          <h1 className="text-5xl font-bold mb-6 tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#EF4444] to-[#ee3c3c] animate__animated animate__fadeIn animate__delay-1s">
             Welcome to Our Q&A Platform!
           </h1>
           {/* Paragraph with a slight animation */}
@@ -93,9 +95,10 @@ const Bannar = () => {
             Ask questions, discover answers, and engage with experts. Join our growing community today.
           </p>
           {/* Button with dynamic hover effects */}
-          <button className="bg-purple-600 hover:bg-purple-700 text-white py-4 px-10 rounded-full text-lg font-semibold shadow-2xl hover:shadow-2xl transform transition-all duration-300 ease-in-out scale-100 hover:scale-110">
-            Start Your Journey
-          </button>
+          <Link to='/queries'><button className="bg-gradient-to-r from-[#EF4444] to-[#ff5858] text-white py-3 px-8 rounded-full text-lg font-semibold hover:from-[#fd5656] hover:to-[#EF4444] transform transition-all duration-300 ease-in-out">
+          Start Your Journey
+          </button></Link>
+          
         </div>
       </div>
     </div>

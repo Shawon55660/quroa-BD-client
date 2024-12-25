@@ -1,7 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-import { FaDeleteLeft } from "react-icons/fa6";
+
 import toast from "react-hot-toast";
 import AxiosUses from "../hooks/AxiosUses";
 import { FaTrashAlt } from "react-icons/fa";
@@ -14,7 +15,7 @@ const MyRecomd = () => {
     const axiosSecure = AxiosUses()
     useEffect(()=>{
         fetchDataRec()
-    },[])
+    },[user])
 
     
 

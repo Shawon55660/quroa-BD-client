@@ -19,7 +19,11 @@ const Queries = () => {
         fetchAllQuery()
         
     },[search])
-    
+    const [layout ,setLayout] = useState(3)
+    const changeLayout = (id)=>{
+        setLayout(id)
+
+    }
    
 
     return (
@@ -31,8 +35,14 @@ const Queries = () => {
                  placeholder="serach Query by title" 
                  className="outline-none rounded-md border-black border-[1px] px-4 py-2" /> 
             </div>
+            <div className="lg:flex gap-3 hidden  justify-center mt-4">
+                <button onClick={()=>changeLayout(1)} className={`btn btn-neutral ${layout ==1 && `btn-warning`}`}>grid 1 </button>
+                <button onClick={()=>changeLayout(2)} className={`btn btn-neutral ${layout ==2 && `btn-warning`}`}>grid 2 </button>
+                <button onClick={()=>changeLayout(3)} className={`btn btn-neutral ${layout ==3 && `btn-warning`}`}>grid 3 </button>
+                
+            </div>
            
-              <div  className="  mx-auto py-6">
+              <div  className= {`grid md:grid-cols-2  md:w-11/12  lg:grid-cols-${layout} ${layout== 1 && `max-w-2xl`} gap-4  mx-auto py-6`}>
               
             {data.map(post=> <Card key={post._id} post={post}></Card>)}
  
