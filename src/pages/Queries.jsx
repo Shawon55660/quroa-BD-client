@@ -32,7 +32,7 @@ const Queries = () => {
             <div className="flex items-center   justify-around pt-4 ">
                 <input onChange={e=> setSearch(e.target.value)}
                 type="text"
-                 placeholder="serach Query by title" 
+                 placeholder="serach by Product name " 
                  className="outline-none rounded-md border-black border-[1px] px-4 py-2" />
                  <div className="lg:flex items-center  hidden  justify-center ">
                 <button onClick={()=>changeLayout('lg:grid-cols-1')} className={`${layout == 'lg:grid-cols-1' ? 'bg-red-600':'bg-gray-800 '} rounded-sm py-1  px-6 text-white `}>Layout 1 </button>

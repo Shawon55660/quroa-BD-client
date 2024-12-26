@@ -88,7 +88,7 @@ const Card = ({ post }) => {
                                         <div key={comment._id} className='flex items-center gap-2 my-4'>
                                             <img className='w-10 rounded-full h-10' src={comment.recommender_photo} alt="" />
                                             <div className='py-[2px] px-2 bg-gray-200 border-[1px] rounded-md w-[300px]'>
-                                                <p className='font-bold text-sm'>{comment.recommender_disPlayName}</p>
+                                                <p className='font-bold text-sm'>{comment.recommender_disPlayName ?comment.recommender_disPlayName:'Guest'  }</p>
                                                 <p className='text-sm'>{comment.recProductName}</p>
                                             </div>
                                         </div>
@@ -97,7 +97,7 @@ const Card = ({ post }) => {
                                     <div className='flex items-center gap-2 my-4'>
                                         <img className='w-10 rounded-full h-10' src={comment[0]?.recommender_photo} alt="" />
                                         <div className='py-[2px] px-2 bg-gray-200 border-[1px] rounded-md w-[300px]'>
-                                            <p className='font-bold text-sm'>{comment[0]?.recommender_disPlayName}</p>
+                                            <p className='font-bold text-sm'>{comment[0]?.recommender_disPlayName?comment[0]?.recommender_disPlayName:'Guest'}</p>
                                             <p className='text-sm'>{comment[0]?.recProductName}</p>
                                         </div>
                                     </div>
