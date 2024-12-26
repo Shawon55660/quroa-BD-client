@@ -7,18 +7,46 @@ import toast from "react-hot-toast";
 import { LiaEyeSolid } from "react-icons/lia";
 import { MdWatchLater } from "react-icons/md";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const QueryCard = ({ query, fetchData }) => {
     const { _id, owner_email, productName, productBrand, productImageURL, queryTitle, boycottReason, recommendationCount, currentData, owner_photo, owner_disPlayName } = query;
-    const handleDelete = async (id) => {
-        const { data } = await axios.delete(`${import.meta.env.VITE_localURL}/query-delete/${id}`)
-        if (data.deletedCount) {
-            fetchData()
-            toast.success('delete data successfully')
-        }
 
+
+
+    const handleDelete = (_id) => {
+
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to access this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then(async(result) => {
+            if (result.isConfirmed) {
+                const { data } = await axios.delete(`${import.meta.env.VITE_localURL}/query-delete/${_id}`)
+              
+               
+                   
+                if (data.deletedCount) {
+                    fetchData()
+                    
+                    Swal.fire({
+                        title: "Deleted!",
+                        text: "Your query has been deleted.",
+                        icon: "success"
+                    });
+                    
+                }
+                
+    
+            }
+        });
     }
+   
     return (
         <div>
 

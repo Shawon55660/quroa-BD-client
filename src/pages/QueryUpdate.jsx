@@ -98,7 +98,7 @@ const QueryUpdate = () => {
                 Product Image URL:
             </label>
             <input
-                type="text"
+                type="url"
                 name="productImageURL"
                 defaultValue={productImageURL}
                 required

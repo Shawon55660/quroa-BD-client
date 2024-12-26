@@ -115,7 +115,7 @@ const AddQuery = () => {
                 Product Image URL:
               </label>
               <input
-                type="text"
+                type="url"
                 name="productImageURL"
                 required
                 placeholder="Enter Product Image URL"

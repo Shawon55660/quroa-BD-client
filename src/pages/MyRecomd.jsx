@@ -7,6 +7,7 @@ import toast from "react-hot-toast";
 import AxiosUses from "../hooks/AxiosUses";
 import { FaTrashAlt } from "react-icons/fa";
 import { format } from "date-fns";
+import Swal from "sweetalert2";
 
 
 const MyRecomd = () => {
@@ -26,17 +27,48 @@ const MyRecomd = () => {
         setRecData(data)
 
     }
-    const handleDelete= async(id)=>{
+    const handleDelete = (_id) => {
 
-        const {data} =await axios.delete(`${import.meta.env.VITE_localURL}/my-recommendation/${id}`)
+      Swal.fire({
+          title: "Are you sure?",
+          text: "You won't be able to access this!",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Yes, delete it!"
+      }).then(async(result) => {
+          if (result.isConfirmed) {
+            const {data} =await axios.delete(`${import.meta.env.VITE_localURL}/my-recommendation/${_id}`)
+            
+             
+                 
+              if (data.deletedCount) {
+                fetchDataRec()
+                  
+                  Swal.fire({
+                      title: "Deleted!",
+                      text: "Your Recommandation has been deleted.",
+                      icon: "success"
+                  });
+                  
+              }
+              
+  
+          }
+      });
+  }
+    // const handleDelete= async(id)=>{
 
-        if(data.deletedCount){
-            toast.success('data delete successfully')
-            fetchDataRec()
-        }
+    //     const {data} =await axios.delete(`${import.meta.env.VITE_localURL}/my-recommendation/${id}`)
+
+    //     if(data.deletedCount){
+    //         toast.success('data delete successfully')
+    //         fetchDataRec()
+    //     }
 
   
-    }
+    // }
     return (
 
 <div className="p-6 bg-white shadow-lg rounded-lg">
