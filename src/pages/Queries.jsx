@@ -3,11 +3,15 @@ import {  useEffect, useState } from "react";
 import Card from "../allComponents/Card";
 import bg from '../../src/assets/bg4.avif'
 
+import Loader from "../allComponents/Loader";
+import Helmets from "../sharedComponent/Helmets";
+
 
 
 const Queries = () => {
    
     const [search,setSearch] =useState('')
+    
     
  const[data,allData] = useState([])
     useEffect(()=>{
@@ -24,10 +28,12 @@ const Queries = () => {
         setLayout(layout)
 
     }
-   
+   if(!data.length) return <Loader></Loader>
 
     return (
 
+     <>
+     <Helmets heading='Queries'></Helmets>
         <div className="pb-8" style={{ backgroundImage: `url(${bg})` }}>
             <div className="flex items-center   justify-around pt-4 ">
                 <input onChange={e=> setSearch(e.target.value)}
@@ -50,6 +56,7 @@ const Queries = () => {
           </div>
             
         </div>
+     </>
     );
 };
 

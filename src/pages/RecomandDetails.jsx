@@ -4,6 +4,9 @@ import { useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import toast from 'react-hot-toast';
+import Loader from '../allComponents/Loader';
+import { Zoom } from 'react-reveal';
+import Helmets from '../sharedComponent/Helmets';
 
 const RecomandDetails = () => {
     const { user } = useContext(AuthContext);
@@ -16,7 +19,7 @@ const RecomandDetails = () => {
 
     useEffect(() => {
         fetchDataById();
-    }, []);
+    }, [query]);
 
     const fetchDataById = async () => {
         const { data } = await axios.get(`${import.meta.env.VITE_localURL}/query/details/${id}`);
@@ -60,9 +63,12 @@ const RecomandDetails = () => {
                 toast.error('Server error, please try again');
             });
     };
-
+if(query.length) return <Loader></Loader>
     return (
-        <div className="min-h-screen bg-gray-100 py-12">
+       <>
+       <Helmets heading='RecomandDetails'></Helmets>
+       <Zoom>
+            <div className="min-h-screen bg-gray-100 py-12">
             <div className="max-w-7xl mx-auto bg-white shadow-xl rounded-lg p-6">
                 <h2 className="text-3xl font-bold text-center text-[#EF4444] mb-8">Recommend This Query</h2>
                 <div className="grid lg:grid-cols-2 gap-8">
@@ -103,7 +109,7 @@ const RecomandDetails = () => {
                             <div className="grid lg:grid-cols-2 gap-6">
                                 {/* Product Name */}
                                 <div>
-                                    <label className="block text-gray-700">Recommended Product Name</label>
+                                    <label className="block pb-2 font-semibold text-gray-700">Recommended Product Name</label>
                                     <input
                                         type="text"
                                         name="productName"
@@ -115,7 +121,7 @@ const RecomandDetails = () => {
 
                                 {/* Product Brand */}
                                 <div>
-                                    <label className="block text-gray-700">Recommended Product Brand</label>
+                                    <label className="block pb-2 font-semibold text-gray-700">Recommended Product Brand</label>
                                     <input
                                         type="text"
                                         name="productBrand"
@@ -128,7 +134,7 @@ const RecomandDetails = () => {
 
                             {/* Product Image URL */}
                             <div>
-                                <label className="block text-gray-700">Product Image URL</label>
+                                <label className="block pb-2 font-semibold text-gray-700">Product Image URL</label>
                                 <input
                                     type="text"
                                     name="productImageURL"
@@ -140,7 +146,7 @@ const RecomandDetails = () => {
 
                             {/* Query Title */}
                             <div>
-                                <label className="block text-gray-700">Query Title</label>
+                                <label className="block pb-2 font-semibold text-gray-700">Query Title</label>
                                 <input
                                     type="text"
                                     name="queryTitle"
@@ -152,7 +158,7 @@ const RecomandDetails = () => {
 
                             {/* Boycotting Reason */}
                             <div>
-                                <label className="block text-gray-700">Boycotting Reason</label>
+                                <label className="block pb-2 font-semibold text-gray-700">Boycotting Reason</label>
                                 <textarea
                                     name="boycottReason"
                                     required
@@ -173,6 +179,8 @@ const RecomandDetails = () => {
                 </div>
             </div>
         </div>
+        </Zoom>
+       </>
     );
 };
 

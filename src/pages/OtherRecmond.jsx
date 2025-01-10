@@ -5,6 +5,9 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import AxiosUses from "../hooks/AxiosUses";
 import { format } from "date-fns";
+import Loader from "../allComponents/Loader";
+import { Zoom } from "react-reveal";
+import Helmets from "../sharedComponent/Helmets";
 
 
 const OtherRecmond = () => {
@@ -22,8 +25,12 @@ const OtherRecmond = () => {
         setRecData(data)
 
     }
+    if(!recData.length) return <Loader></Loader>
     return (
 
+<>
+<Helmets heading='otherRecmondations'></Helmets>
+<Zoom>
 <div className="p-8 bg-gradient-to-r from-gray-50 to-gray-200 min-h-screen flex  justify-center">
 <div className="w-full max-w-6xl bg-white shadow-xl rounded-lg overflow-hidden">
   <div className="bg-gradient-to-r from-gray-900 to-gray-800 text-white text-lg font-semibold p-5 text-center">
@@ -60,6 +67,8 @@ const OtherRecmond = () => {
   </div>
 </div>
 </div>
+</Zoom>
+</>
     );
 };
 

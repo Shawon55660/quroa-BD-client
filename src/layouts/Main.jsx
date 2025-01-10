@@ -10,7 +10,7 @@ const Main = () => {
             <Navbar></Navbar>
             {/* navbar end here  */}
             {/* outlet start  here  */}
-            <div  className='min-h-[calc(100vh-100px)] mt-16 overflow-y-hidden'>
+            <div  className='min-h-screen mt-16 overflow-y-hidden'>
             <Outlet></Outlet>
             </div>
             

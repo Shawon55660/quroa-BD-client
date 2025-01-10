@@ -61,7 +61,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-[#EF4444] z-20 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+              className="menu menu-sm dropdown-content bg-[#EF4444] z-20 rounded-box mt-3 w-52 p-2 shadow">
               {mainList}
 
               {user?.email && withUser}
@@ -69,7 +69,7 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="flex items-center gap-2">
-          <img className="mx-auto my-2" src="https://img.icons8.com/?size=30&id=lR3GPGorCbvp&format=png&color=000000" alt="" />
+          <img className="mx-auto  my-2" src="https://img.icons8.com/?size=40&id=57SgDS4Ys9MV&format=png&color=FFFFFF" alt="" />
             <a className="text-2xl font-bold">Quora </a>
           
           </div>

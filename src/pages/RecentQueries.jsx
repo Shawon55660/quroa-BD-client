@@ -3,6 +3,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import RecentQueryCard from '../allComponents/RecentQueryCard';
 import { Link } from 'react-router-dom';
+import Loader from '../allComponents/Loader';
 
 const RecentQueries = () => {
 
@@ -17,10 +18,11 @@ const RecentQueries = () => {
         const {data}  = await axios.get(`${import.meta.env.VITE_localURL}/Recent-queries`)
         setRecent(data)
     }
+    if(!recent.length) return <Loader></Loader>
     return (
         <div className='w-9/12 mx-auto'>
             <div>
-                <h2 className='text-3xl text-center font-semibold my-4 border-b pb-6 border-[#380F8F]'>Recently Posted Query</h2>
+                <h2 className='text-3xl text-center font-semibold my-4 border-b pb-6 border-gray-800'>Recently Posted Query</h2>
             </div>
 
            {

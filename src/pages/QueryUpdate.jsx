@@ -2,7 +2,9 @@
 import axios from 'axios';
 import  { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
+import { Zoom } from 'react-reveal';
 import { useNavigate, useParams } from 'react-router-dom';
+import Helmets from '../sharedComponent/Helmets';
 
 //http://localhost:3000/query/details/${params.id}
 const QueryUpdate = () => {
@@ -51,7 +53,10 @@ const QueryUpdate = () => {
     }
    
     return (
-        <div>
+       <>
+       <Helmets heading='Update'></Helmets>
+       <Zoom>
+            <div>
            <form onSubmit={UpdateData}
         
         className="max-w-4xl mx-auto bg-white shadow-lg p-6 rounded-lg"
@@ -148,6 +153,8 @@ const QueryUpdate = () => {
 
     </form>
         </div>
+        </Zoom>
+       </>
     );
 };
 

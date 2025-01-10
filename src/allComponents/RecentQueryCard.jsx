@@ -4,6 +4,7 @@
 import { format } from "date-fns";
 import { LiaEyeSolid } from "react-icons/lia";
 import { MdWatchLater } from "react-icons/md";
+import { Zoom } from "react-reveal";
 import { Link } from "react-router-dom";
 
 
@@ -11,11 +12,12 @@ import { Link } from "react-router-dom";
 const RecentQueryCard = ({post}) => {
     const   {_id,owner_email,productName,productBrand,productImageURL,queryTitle,boycottReason,recommendationCount,currentData,owner_photo,owner_disPlayName} = post;
     return (
-        <div className="md:grid md:grid-cols-8 gap-4 my-6 items-start border-b-[1px] pb-2">
-            <div className="col-span-2   px-4 md:border-gray-900 md:border-r-[1px]">
+       <Zoom>
+         <div className="md:grid md:grid-cols-8 gap-4 my-4 items-start border-b-[1px] py-4">
+            <div className="col-span-2   px-4 ">
                 <img referrerPolicy="no-referrer" className="mx-auto   rounded-md " src={productImageURL} alt="#" />
             </div>
-            <div className="col-span-6 px-4 md:flex items-end justify-between">
+            <div className="col-span-6 px-4 md:flex items-end  justify-between">
                <div>
                <h2 className="text-xl font-semibold pb-1">{queryTitle}</h2>
                 
@@ -34,6 +36,8 @@ const RecentQueryCard = ({post}) => {
                </div>
             </div>
         </div>
+        
+       </Zoom>
     );
 };
 

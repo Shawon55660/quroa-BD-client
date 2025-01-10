@@ -7,9 +7,10 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 import { auth } from '../firebase/firebase.init';
-import signIn from '../animation/login.json'
-import Lottie from 'lottie-react';
 import Swal from 'sweetalert2';
+import signDesgin from '../../src/animation2/signDesign.svg'
+import { Zoom } from 'react-reveal';
+import Helmets from '../sharedComponent/Helmets';
 
 const Register = () => {
 
@@ -83,33 +84,40 @@ const Register = () => {
       })
   }
   return (
-    <div className='grid md:grid-cols-2 gap-8 items-center w-11/12 mx-auto  my-12'>
-      <div className=" w-10/12 mx-auto  ">
+    <>
+    <Helmets heading='Sign Up'></Helmets>
+    <div className='grid lg:grid-cols-6 gap-8 items-center w-11/12 mx-auto  my-12'>
+      <Zoom>
+      <div className= 'lg:w-10/12 lg:col-span-2 mx-auto'>
+    
+    <img className='w-full' src={signDesgin} alt="" />
+  </div>
+      </Zoom>
+     <Zoom>
+     <div className="w-full lg:col-span-4 lg:w-11/12 mx-auto  ">
         <div className=" ">
 
 
-          <div className=" bg-base-100  shadow-2xl">
-            <form onSubmit={handleRegister} className="card-body">
-              <h2 className='font-bold text-2xl text-[#380F8F]  text-center'>Sign Up Here To  Free</h2>
-              <div className="form-control">
+          <div className=" bg-base-100 w-full  shadow-2xl">
+            <form onSubmit={handleRegister} className="card-body w-full">
+              <h2 className='font-bold text-xl lg:text-2xl text-[#EF4444]  text-center'>Sign Up Here To  Free</h2>
+              <div className='md:flex  w-full gap-2'>
+              <div className="form-control w-full">
                 <label className="label">
                   <span className="label-text">Name</span>
                 </label>
                 <input type="text" name='name' placeholder="enter your name" className="input input-bordered" required />
               </div>
-              <div className="form-control">
+              <div className="form-control w-full">
                 <label className="label">
                   <span className="label-text">Email</span>
                 </label>
                 <input type="email" name='email' placeholder="email" className="input input-bordered" required />
               </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Photo URL</span>
-                </label>
-                <input type='text' name='photo' placeholder="photo url" className="input input-bordered" required />
               </div>
-              <div className="form-control relative">
+             
+             <div className='md:flex gap-2'>
+             <div className="form-control w-full relative">
                 <div onClick={handlePassShow} className='absolute right-3 top-12'>
                   {
                     showPass ? <FaRegEyeSlash /> : <IoEyeOutline />
@@ -123,7 +131,7 @@ const Register = () => {
                 
 
               </div>
-              <div className="form-control relative">
+              <div className="form-control w-full relative">
                 <div onClick={handlePassShow} className='absolute right-3 top-12'>
                   {
                     showPass ? <FaRegEyeSlash /> : <IoEyeOutline />
@@ -137,20 +145,26 @@ const Register = () => {
                 <p className='text-red-600 mt-3'>{passError}</p>
 
               </div>
-
-              <div className="form-control mt-3">
-                <button className=" rounded-sm py-2 bg-[#380F8F]  text-white">Sign Up</button>
+             </div>
+             <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Photo URL</span>
+                </label>
+                <input type='text' name='photo' placeholder="photo url" className="input input-bordered" required />
               </div>
-              <div className='text-md text-center font-semibold my-3'>Already have an account? please <Link className='text-[#380F8F] ' to='/login'>Login In</Link> </div>
+
+              <div className="form-control  mt-3">
+                <button className=" rounded-sm py-2 bg-[#EF4444]  text-white">Sign Up</button>
+              </div>
+              <div className='text-md text-center  my-3'>Already have an account? please <Link className='text-[#EF4444] ' to='/login'>Login</Link> </div>
             </form>
           </div>
 
         </div>
       </div>
-      <div>
-        <Lottie className='w-10/12' animationData={signIn}></Lottie>
-      </div>
+      </Zoom>    
     </div>
+    </>
   );
 };
 

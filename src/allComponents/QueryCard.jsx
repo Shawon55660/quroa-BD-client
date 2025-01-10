@@ -6,6 +6,7 @@ import { format } from "date-fns";
 import toast from "react-hot-toast";
 import { LiaEyeSolid } from "react-icons/lia";
 import { MdWatchLater } from "react-icons/md";
+import { Zoom } from "react-reveal";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -50,7 +51,8 @@ const QueryCard = ({ query, fetchData }) => {
     return (
         <div>
 
-            <div className="md:grid md:grid-cols-8 gap-4 my-6  items-center  border-b-[1px] pb-2">
+           <Zoom>
+           <div className="md:grid md:grid-cols-8 gap-4 my-4  items-center  border-b-[1px] py-4 ">
                 <div className="col-span-2   px-4 ">
                     <img referrerPolicy="no-referrer" className="mx-auto  md:w-[300px]  rounded-md " src={productImageURL} alt="#" />
                 </div>
@@ -75,6 +77,7 @@ const QueryCard = ({ query, fetchData }) => {
                    </div>
                 </div>
             </div>
+           </Zoom>
 
 
         </div>

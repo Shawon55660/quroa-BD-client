@@ -2,12 +2,13 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-
-import toast from "react-hot-toast";
 import AxiosUses from "../hooks/AxiosUses";
 import { FaTrashAlt } from "react-icons/fa";
 import { format } from "date-fns";
 import Swal from "sweetalert2";
+import Loader from "../allComponents/Loader";
+import { Zoom } from "react-reveal";
+import Helmets from "../sharedComponent/Helmets";
 
 
 const MyRecomd = () => {
@@ -69,8 +70,12 @@ const MyRecomd = () => {
 
   
     // }
+    if(!recData.length) return <Loader></Loader>
     return (
 
+<>
+<Helmets heading='MyRecomdation'></Helmets>
+<Zoom>
 <div className="p-6 bg-white shadow-lg rounded-lg">
       <h2 className="text-2xl font-semibold text-gray-800 mb-6">Recommendations</h2>
       <div className="overflow-x-auto">
@@ -110,6 +115,8 @@ const MyRecomd = () => {
         </table>
       </div>
     </div>
+</Zoom>
+</>
 
 
     );

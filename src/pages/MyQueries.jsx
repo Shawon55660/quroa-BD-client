@@ -5,10 +5,12 @@ import { AuthContext } from "../Provider/AuthProvider";
 import axios from "axios";
 import QueryCard from "../allComponents/QueryCard";
 import AxiosUses from "../hooks/AxiosUses";
+import Loader from "../allComponents/Loader";
+import Helmets from "../sharedComponent/Helmets";
 
 const MyQueries = () => {
     
-const {user} = useContext(AuthContext)
+const {user,loading} = useContext(AuthContext)
 const [queryData,setQueryData] = useState([])
 const axiosSecure = AxiosUses()
 
@@ -21,22 +23,26 @@ useEffect(()=>{
         const {data} = await axiosSecure.get(`/my-query?owner_email=${user?.email}`)
         setQueryData(data)
     }
+    if(!queryData.length) return <Loader></Loader>
 
     return (
-        <div className="w-11/12 mx-auto">
+     <>
+     <Helmets heading='MyQueries'></Helmets>
+     <div className="w-11/12 mx-auto">
         
-          <div className="w-11/12 mx-auto text-center" > <h2 className="text-2xl my-4 font-semibold">My Query List  </h2> 
-            <button className="bg-gray-900 text-white px-4 py-1 rounded-md  "><Link to='/my-queries/add-query'>Add More</Link></button></div>
-          {
-            queryData?.length? <div  >
-            {queryData.map(query=> <QueryCard key={query._id} fetchData = {fetchData} query={query}></QueryCard>)}
+        <div className="w-11/12 mx-auto text-center" > <h2 className="text-2xl my-4 font-semibold">My Query List  </h2> 
+          <button className="bg-gray-900 text-white px-4 py-1 rounded-md  "><Link to='/my-queries/add-query'>Add More</Link></button></div>
+        {
+          queryData?.length? <div  >
+          {queryData.map(query=> <QueryCard key={query._id} fetchData = {fetchData} query={query}></QueryCard>)}
 
-          </div>: <div className="text-center"><p  className="text-3xl  my-12 text-[#e44f4f] font-bold">No Data Found In My Query</p>
-         </div>
+        </div>: <div className="text-center"><p  className="text-3xl  my-12 text-[#e44f4f] font-bold">No Data Found In My Query</p>
+       </div>
 
-          
-          }
-        </div>
+        
+        }
+      </div>
+     </>
     );
 };
 

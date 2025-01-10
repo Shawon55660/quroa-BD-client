@@ -1,5 +1,7 @@
 import { format } from "date-fns";
+import { Zoom } from "react-reveal";
 import { Link, useLoaderData } from "react-router-dom";
+import Helmets from "../sharedComponent/Helmets";
 
 
 const QueryDetails = () => {
@@ -7,12 +9,16 @@ const QueryDetails = () => {
  const {owner_email,productName,productBrand,productImageURL,queryTitle,boycottReason,recommendationCount,currentData,owner_photo,owner_disPlayName} = detailsData
   
     return (
-        <div className="max-w-5xl mx-auto bg-white shadow-xl rounded-3xl overflow-hidden">
+      
+      <>
+      <Helmets heading='details'></Helmets>
+      <Zoom>
+          <div className="max-w-5xl mx-auto bg-white shadow-xl rounded-3xl overflow-hidden">
         {/* Header Section */}
         <div className="p-6 bg-gray-50 border-b border-gray-200">
           <div className="flex justify-between items-center">
             <h1 className="text-3xl font-extrabold text-gray-800">{productName}</h1>
-            <span className="bg-blue-100 text-blue-600 px-4 py-1 text-sm rounded-full shadow-sm">
+            <span className="bg-red-100 text-red-600 px-4 py-1 text-sm rounded-full shadow-sm">
               {productBrand}
             </span>
           </div>
@@ -41,7 +47,7 @@ const QueryDetails = () => {
               <p className="text-lg text-gray-600 mb-4">
                 <strong>Boycott Reason:</strong> {boycottReason}
               </p>
-              <p className="text-[#380F8F]  font-medium mb-4">
+              <p className="text-gray-800  font-medium mb-4">
                 <strong>Recommendations:</strong> {recommendationCount}+
               </p>
             </div>
@@ -60,7 +66,7 @@ const QueryDetails = () => {
           <img
             src={owner_photo}
             alt={owner_disPlayName}
-            className="w-20 h-20 rounded-full object-cover shadow-md border-4 border-blue-400"
+            className="w-20 h-20 rounded-full object-cover shadow-md border-4 border-red-400"
           />
           <div>
             <p className="text-lg font-bold text-gray-800">{owner_disPlayName}</p>
@@ -68,6 +74,8 @@ const QueryDetails = () => {
           </div>
         </div>
       </div>
+        </Zoom>
+      </>
     );
 };
 

@@ -5,10 +5,11 @@ import { FaRegEyeSlash } from 'react-icons/fa';
 import { IoEyeOutline } from 'react-icons/io5';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
-import signIn from '../animation/register.json'
-import Lottie from 'lottie-react';
 import Swal from 'sweetalert2';
 import toast from 'react-hot-toast';
+import loginDesgin from '../../src/animation2/loginDesgin.svg'
+import { Zoom } from 'react-reveal';
+import Helmets from '../sharedComponent/Helmets';
 
 
 
@@ -66,15 +67,25 @@ const Login = () => {
       })
   }
   return (
-    <div className='grid md:grid-cols-2 mx-auto items-center w-11/12'>
-      <div className=" mx-auto  min-h-screen my-12">
+ 
+ <>
+ <Helmets heading='login'></Helmets>
+ <div className='grid md:grid-cols-2 mx-auto items-center w-11/12'>
+        <Zoom>
+        <div className='md:11/12 mx-auto'>
+        <img className='w-full' src={loginDesgin} alt="" />
+        
+      </div>
+        </Zoom>
+     <Zoom>
+     <div className=" mx-auto w-full md:w-10/12  min-h-screen ">
         <div className=" ">
 
           <div className=" bg-base-100  shadow-xl">
 
             <form onSubmit={handleLogin} className="card-body">
 
-              <h2 className='font-bold text-2xl text-[#380F8F] text-center'>Log In  Here </h2>
+              <h2 className='font-bold text-2xl text-[#EF4444] text-center'>Login  Here </h2>
 
 
               <div className="form-control">
@@ -106,24 +117,24 @@ const Login = () => {
 
 
               <div className="form-control mt-4">
-                <button className=" py-2 rounded-sm bg-[#380F8F]  text-white">Login </button>
+                <button className=" py-2 rounded-sm bg-[#EF4444]  text-white">Login </button>
               </div>
 
             </form>
-            <div className="form-control  flex flex-col gap-3 ">
-              <button onClick={handleGoogle} className='btn text-lg rounded-sm px-2 mb-6 w-11/12 mx-auto'> <img src="https://img.icons8.com/?size=30&id=17949&format=png&color=000000" alt="" /> countine with google</button>
-              <div className='text-md  font-semibold mb-3 pb-3 px-6'>Don't have any account? please <Link className='text-[#380F8F] ' to='/register'>Register Now</Link> </div>
+            <div className="form-control  flex flex-col gap-3 mx-3">
+              <button onClick={handleGoogle} className='btn md:text-sm lg:text-lg rounded-sm px-2  mb-6 w-11/12 mx-auto'> <img src="https://img.icons8.com/?size=30&id=17949&format=png&color=000000" alt="" /> countine with google</button>
+              <div className='text-md text-center  mb-3 pb-3 px-6'>Don't have any account? please <Link className='text-[#EF4444] ' to='/register'>Register Now</Link> </div>
 
             </div>
 
           </div>
         </div>
       </div>
-      <div>
-        <Lottie className='w-10/12' animationData={signIn}></Lottie>
-      </div>
+     </Zoom>
+    
 
-    </div>
+    </div> 
+ </>
   );
 };
 

@@ -32,7 +32,7 @@ const Bannar = () => {
       <div className="relative w-full h-[600px] bg-cover transition-all duration-1000 ease-in-out transform hover:scale-110"
            style={{ backgroundImage: `url(${quesiotn3})` }}>
         {/* Dark Overlay for better text visibility */}
-        <div className="absolute inset-0 bg-black opacity-20"></div>
+        {/* <div className="absolute inset-0 bg-black opacity-20"></div> */}
         
         {/* Content Section */}
         <div className="relative z-10 text-center text-white py-32 px-6">
@@ -41,7 +41,7 @@ const Bannar = () => {
             Welcome to Our Q&A Platform!
           </h1>
           {/* Paragraph with a slight animation */}
-          <p className="text-xl sm:text-xl md:text-xl mb-8 max-w-3xl mx-auto opacity-85 animate__animated animate__fadeIn animate__delay-2s">
+          <p className="text-xl sm:text-xl md:text-xl mb-8 max-w-3xl mx-auto text-gray-900 opacity-85 animate__animated animate__fadeIn animate__delay-2s">
             Ask questions, discover answers, and engage with experts. Join our growing community today.
           </p>
           {/* Button with dynamic hover effects */}
@@ -56,20 +56,20 @@ const Bannar = () => {
         <SwiperSlide>
         <div className="App">
       {/* Banner Section with Background Image */}
-      <div className="relative w-full h-[600px] bg-cover bg-center transition-all duration-1000 ease-in-out transform hover:scale-105"
+      <div className="relative w-full h-[600px] bg-cover  transition-all duration-1000 ease-in-out transform hover:scale-105"
            style={{ backgroundImage: `url(${quesiotn})` }}>
         {/* Dark Overlay for better text visibility */}
-        <div className="absolute inset-0 bg-black opacity-40"></div>
+        {/* <div className="absolute inset-0 bg-black opacity-40"></div> */}
         
         {/* Content Section */}
-        <div className="relative z-10 text-center text-white py-32 px-6">
+        <div className="relative z-10 text-center text-[#fa4747] py-32 px-6">
           <h1 className="text-5xl font-extrabold mb-6   tracking-wide drop-shadow-xl animate__animated animate__fadeIn animate__delay-1s">
             Welcome to the Q&A Hub!
           </h1>
-          <p className="text-lg text-[#fa4747] sm:text-xl font-semibold md:text-2xl mb-8 max-w-2xl mx-auto drop-shadow-md animate__animated animate__fadeIn animate__delay-2s">
+          <p className="text-lg text-black sm:text-xl  md:text-xl mb-8 max-w-2xl mx-auto drop-shadow-md animate__animated animate__fadeIn animate__delay-2s">
             Find answers to your questions, or ask your own! Explore a community of knowledge.
           </p>
-          <Link to='/my-queries'><button className="bg-gradient-to-r from-[#f6f5f8] to-[#f0eafd] text-black py-3 px-8 rounded-full text-lg font-semibold hover:from-[#dadada] hover:to-[#eae0ff] transform transition-all duration-300 ease-in-out">
+          <Link to='/my-queries'><button className="bg-gradient-to-r from-[#fa4748] to-[#fa4747] text-white py-3 px-8 rounded-full text-lg font-semibold hover:from-[#fa4747] hover:to-[#eae0ff] transform transition-all duration-300 ease-in-out">
             Start Query
           </button></Link>
           
@@ -83,12 +83,12 @@ const Bannar = () => {
       <div className="relative w-full h-[600px] bg-cover  transition-all duration-1000 ease-in-out transform hover:scale-105"
            style={{ backgroundImage: `url(${quesiotn2})` }}>
         {/* Dark Overlay for better text visibility */}
-        <div className="absolute inset-0 bg-black opacity-10"></div>
+        {/* <div className="absolute inset-0 bg-black opacity-10"></div> */}
         
         {/* Content Section */}
         <div className="relative z-10 text-center text-white py-32 px-6">
           {/* Heading with a different style */}
-          <h1 className="text-5xl  text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-pink-900 mb-6 tracking-tight">
+          <h1 className="text-5xl  text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-gray-900 mb-6 tracking-tight">
             Welcome to the Q&A Hub!
           </h1>
           {/* Paragraph */}
