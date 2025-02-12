@@ -38,7 +38,7 @@ const Footer = () => {
   </nav>
   </div>
  <Zoom>
- <div className="md:w-6/12 p-2 mx-auto">
+ <div className="md:w-6/12 w-10/12 p-2 mx-auto">
   
   <img className="w-full" src={footer} alt="footer img" />
 </div>
