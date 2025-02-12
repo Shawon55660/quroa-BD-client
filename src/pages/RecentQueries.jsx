@@ -20,7 +20,7 @@ const RecentQueries = () => {
     }
     if(!recent.length) return <Loader></Loader>
     return (
-        <div className='w-9/12 mx-auto'>
+        <div className='w-11/12 md:w-9/12 mx-auto'>
             <div>
                 <h2 className='text-3xl text-center font-semibold my-4 border-b py-12 pb-6 border-gray-800'>Recently Posted Query</h2>
             </div>

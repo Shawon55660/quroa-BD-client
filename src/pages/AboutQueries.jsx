@@ -26,7 +26,7 @@ const AboutQueries = () => {
                     <input type="radio" name="my-accordion-2" />
                     <div className="collapse-title text-xl font-medium">How can I ask a question?</div>
                     <div className="collapse-content">
-                        <p>You can easily post a new question on our platform. Just click the "Ask Question" button and type your query.</p>
+                        <p>You can easily post a new question on our platform. Just click the Ask Question button and type your query.</p>
                     </div>
                 </div>
                 <div className="collapse collapse-arrow bg-base-200">
@@ -75,7 +75,7 @@ const AboutQueries = () => {
                     <input type="radio" name="my-accordion-2" />
                     <div className="collapse-title text-xl font-medium">How can I contact Quora BD support?</div>
                     <div className="collapse-content">
-                        <p>You can contact support through the "Contact Us" page on the website.</p>
+                        <p>You can contact support through the Contact Us page on the website.</p>
                     </div>
                 </div>
             </div>
