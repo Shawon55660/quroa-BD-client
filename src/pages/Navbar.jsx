@@ -39,6 +39,7 @@ const Navbar = () => {
   const mainList = <>
     <li><NavLink to='/'>Home</NavLink></li>
     <li><NavLink to='/queries'>Queries</NavLink></li>
+    <li><NavLink to='/aboutQueries'>About Queries</NavLink></li>
   </>
   return (
     <div className="relative z-20">
@@ -61,7 +62,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-[#EF4444] z-20 rounded-box mt-3 w-52 p-2 shadow">
+              className="menu menu-sm dropdown-content bg-[#EF4444] z-20 font-semibold rounded-box mt-3 w-52 p-2 shadow">
               {mainList}
 
               {user?.email && withUser}
@@ -75,7 +76,7 @@ const Navbar = () => {
           </div>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal gap-2 px-1 ">
+          <ul className="menu menu-horizontal font-semibold gap-2 px-1 ">
             {mainList}
 
             {user?.email && withUser}

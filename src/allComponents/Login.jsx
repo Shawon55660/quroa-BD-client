@@ -12,12 +12,6 @@ import { Zoom } from 'react-reveal';
 import Helmets from '../sharedComponent/Helmets';
 
 
-
-
-
-
-
-
 const Login = () => {
   //pass show
   const [showPass, setShowPass] = useState(false);
@@ -27,7 +21,7 @@ const Login = () => {
   const navigate = useNavigate()
   const location = useLocation()
 
-
+console.log(location.state)
   const handleGoogle = () => {
 
     googleLogin()

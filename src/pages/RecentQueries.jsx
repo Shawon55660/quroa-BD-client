@@ -22,7 +22,7 @@ const RecentQueries = () => {
     return (
         <div className='w-9/12 mx-auto'>
             <div>
-                <h2 className='text-3xl text-center font-semibold my-4 border-b pb-6 border-gray-800'>Recently Posted Query</h2>
+                <h2 className='text-3xl text-center font-semibold my-4 border-b py-12 pb-6 border-gray-800'>Recently Posted Query</h2>
             </div>
 
            {
