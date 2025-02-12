@@ -8,7 +8,7 @@ const Section2 = () => {
         <div>
             {/* heading  */}
             <div className='text-center w-11/12 mx-auto'>
-                <h2 className='text-3xl py-3 font-bold'>Query & Ask Anything  What You Want</h2>
+                <h2 className= 'text-2xl md:text-3xl py-3 font-bold'>Query & Ask Anything  What You Want</h2>
                 <p className='md:w-6/12 text-gray-500 py-2 mx-auto'>Disilab is an open community for anyone that codes. We help you get answers to your toughest coding questions, share knowledge with your coworkers in private, and find your next dream job.</p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 mb-16 gap-3 mt-6 w-11/12  md:w-9/12 mx-auto">
