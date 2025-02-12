@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const Section_3 = () => {
     return (
@@ -8,7 +9,7 @@ const Section_3 = () => {
             </div>
             <div className="w-11/12 py-6 text-center mx-auto">
                 <input type="email" className="py-3 px-8 rounded-l-sm outline-none border-2 " placeholder="Enter Your Email Here" />
-                <input type="button" className="py-3 font-semibold border-2 border-[#EF4444]  bg-[#EF4444] rounded-r-sm px-6 text-white" value="subscribe" />
+               <Link to='/register'> <input type="button" className="py-3 font-semibold cursor-pointer border-2 border-[#EF4444]  bg-[#EF4444] rounded-r-sm px-6 text-white" value="subscribe" /></Link>
             </div>
             
         </div>
