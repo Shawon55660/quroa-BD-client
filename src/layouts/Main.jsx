@@ -5,12 +5,12 @@ import Footer from '../pages/Footer';
 
 const Main = () => {
     return (
-        <div>
+        <div className='max-w-[1440px] mx-auto'>
             {/* navbar start here  */}
-            <Navbar></Navbar>
+           <div className='sticky top-0 z-50'>  <Navbar></Navbar></div>
             {/* navbar end here  */}
             {/* outlet start  here  */}
-            <div  className='min-h-screen mt-16 overflow-y-hidden'>
+            <div  className='min-h-screen  overflow-y-hidden'>
             <Outlet></Outlet>
             </div>
             
