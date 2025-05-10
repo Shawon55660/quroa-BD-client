@@ -30,20 +30,20 @@ const Navbar = () => {
       })
   }
   const withUser = <>
-    <li><NavLink to='/Recommendations-For-Me'>Recommendations For Me</NavLink></li>
-    <li><NavLink to='/my-queries'>My Queries</NavLink></li>
-    <li><NavLink to='/My-recommendations'>My recommendations</NavLink></li>
+    <li><NavLink  className={`px-2`} to='/Recommendations-For-Me'>Recommendations For Me</NavLink></li>
+    <li><NavLink  className={`px-2`} to='/my-queries'>My Queries</NavLink></li>
+    <li><NavLink  className={`px-2`} to='/My-recommendations'>My recommendations</NavLink></li>
 
   </>
 
   const mainList = <>
-    <li><NavLink   to='/'>Home</NavLink></li>
-    <li><NavLink to='/queries'>Queries</NavLink></li>
-    <li><NavLink to='/aboutQueries'>About Queries</NavLink></li>
+    <li><NavLink className={`px-2`}   to='/'>Home</NavLink></li>
+    <li><NavLink  className={`px-2`} to='/queries'>Queries</NavLink></li>
+    <li><NavLink  className={`px-2`} to='/aboutQueries'>About Queries</NavLink></li>
   </>
   return (
     <div>
-     <div className="navbar    bg-[#EF4444] text-white md:px-8">
+     <div className="navbar   bg-[#EF4444] text-white md:px-4">
 
         <div className="navbar-start items-center gap-2 lg:gap-0 ">
           <div className="dropdown pt-1 ">
@@ -72,12 +72,12 @@ const Navbar = () => {
           </div>
           <div className="flex items-center gap-1 md:gap-0">
           
-            <a className="text-xl lg:text-2xl font-bold"><span className="font-serif">Q</span>uora BD</a>
+            <a className="text-xl lg:text-[24px] font-bold"><span className="font-serif">Q</span>uora BD</a>
           
           </div>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal font-semibold gap-2 px-1 ">
+          <ul className="menu menu-horizontal gap-1 font-semibold px-1">
             {mainList}
 
             {user?.email && withUser}
@@ -89,7 +89,7 @@ const Navbar = () => {
         <div className="navbar-end  gap-2">
           {
             user?.photoURL ? <img
-              className='w-[40px] h-[40px] md:w-[50px] md:h-[50px] z-40 rounded-full'
+              className='w-[40px] h-[40px] lg:w-[50px] lg:h-[50px] z-40 rounded-full'
               src={user?.photoURL}
               alt=""
               data-tooltip-id="my-tooltip" data-tooltip-content={`${user?.displayName}`}
@@ -100,8 +100,8 @@ const Navbar = () => {
           }
 
           <Tooltip className='z-40' id="my-tooltip" />
-          {user?.email && <button className="py-1 md:py-1 px-2 md:px-4 rounded-sm  text-md md:text-lg  font-semibold border-white border-[1px] text-white" onClick={handleLogOut}>log-out</button>}
-          {!user && <NavLink to='/login'><button className="py-1 md:py-1 px-2 md:px-4 rounded-sm  text-md md:text-lg  font-semibold border-white border-[1px] text-white">Log-in</button></NavLink>}
+          {user?.email && <button className="py-1 md:py-1 px-2 md:px-3 rounded-sm  text-md lg:text-lg  font-semibold border-white border-[1px] text-white" onClick={handleLogOut}>log-out</button>}
+          {!user && <NavLink to='/login'><button className="py-1 md:py-1 px-2 md:px-4 rounded-sm  text-md lg:text-lg  font-semibold border-white border-[1px] text-white">Log-in</button></NavLink>}
           
 
         </div>
