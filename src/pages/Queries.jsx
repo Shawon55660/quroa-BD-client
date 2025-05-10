@@ -35,7 +35,7 @@ const Queries = () => {
      <>
      <Helmets heading='Queries'></Helmets>
         <div className="pb-8" style={{ backgroundImage: `url(${bg})` }}>
-            <div className="flex items-center   justify-around pt-4 ">
+            <div className="flex items-center   justify-between w-11/12 mx-auto pt-4 ">
                 <input onChange={e=> setSearch(e.target.value)}
                 type="text"
                  placeholder="serach by Product name " 

@@ -36,7 +36,7 @@ const Card = ({ post }) => {
             <div className="  bg-white w-full flex flex-col h-full px-4 my-4 items-start border-[1px] pb-2 rounded-sm">
 
 
-<div className=" flex-grow ">
+<div className=" flex-grow  w-full">
     <div>
         <div className='flex gap-2 items-start my-4 '>
             {post?.owner_photo ? <img src={owner_photo} className='w-10 h-10 rounded-full' alt="" /> :
