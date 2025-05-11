@@ -79,10 +79,10 @@ console.log(location.state)
 
             <form onSubmit={handleLogin} className="card-body">
 
-              <h2 className='font-bold text-2xl text-[#EF4444] text-center'>Login  Here </h2>
+              <h2 className='font-bold  capitalize font-sans text-2xl text-[#EF4444] text-center'>Login  Here </h2>
 
 
-              <div className="form-control">
+              <div className="form-control ">
                 <label className="label">
                   <span className="label-text">Email</span>
                 </label>

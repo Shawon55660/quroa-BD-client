@@ -11,7 +11,20 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
     const [loader, setLoader] = useState(true)
     
+//dark mode light mode system build
+ const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem('theme') === 'dark';
+  });
 
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  }, [darkMode]);
 
     // regsiter system by firebase
     const regsiter = (email, password) => {
@@ -43,6 +56,8 @@ const AuthProvider = ({ children }) => {
         logOut,
         googleLogin,
         loader,
+        darkMode,
+        setDarkMode
       
 
 
