@@ -148,7 +148,7 @@ const AddQuery = () => {
             name="boycottReason"
             required
             placeholder="Enter Boycotting Reason"
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 h-28"
+            className="w-full p-3 border border-gray-300 dark:text-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 h-28"
           ></textarea>
         </div>
 

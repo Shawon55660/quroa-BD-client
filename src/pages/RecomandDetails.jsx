@@ -75,7 +75,6 @@ if(query.length) return <Loader></Loader>
                     {/* Left Section - Owner Info */}
                     <div className="space-y-6">
                         <div className=''>
-                            <h3 className="text-2xl font-semibold dark:text-white  text-gray-800">Owner Information</h3>
                             <div className="flex items-center space-x-4">
                                {owner_photo?                                 <img src={owner_photo} alt="Owner" className="w-10 h-10 rounded-full object-cover" />:
                                <div className="avatar placeholder">
@@ -103,7 +102,7 @@ if(query.length) return <Loader></Loader>
 
                     {/* Right Section - Form */}
                     <div className="bg-[#F9FAFB] p-6 rounded-lg shadow-md">
-                        <form onSubmit={handle} className="space-y-6">
+                        <form onSubmit={handle} className="space-y-6 dark:text-gray-800">
                             <h3 className="text-2xl font-semibold text-gray-800">Recommendation Form</h3>
 
                             <div className="grid lg:grid-cols-2 gap-6">

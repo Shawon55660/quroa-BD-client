@@ -59,7 +59,7 @@ const QueryUpdate = () => {
             <div>
            <form onSubmit={UpdateData}
         
-        className="max-w-4xl mx-auto bg-white shadow-lg p-6 rounded-lg"
+        className="max-w-4xl mx-auto dark:text-gray-800 bg-white shadow-lg p-6 rounded-lg"
     >
         <h2 className="text-2xl font-bold mb-6 text-gray-800 text-center">Update Query</h2>
 

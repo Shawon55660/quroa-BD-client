@@ -64,7 +64,7 @@ const QueryCard = ({ query, fetchData }) => {
 
                         <div className=" md:flex gap-8 pb-4 dark:text-gray-100 text-gray-600">
                             <div className="flex gap-2 items-center"> <MdWatchLater /><p> {format(new Date(currentData), 'P')}</p></div>
-                            <div className="flex gap-4 items-center">  <LiaEyeSolid />  <p>{recommendationCount} recommended</p></div>
+                            <div className="flex gap-2 items-center">  <LiaEyeSolid />  <p>{recommendationCount} recommended</p></div>
                         </div>
                         <p className="pr-4 dark:text-gray-100 text-gray-600 text-sm ">{boycottReason}</p>
                     </div>
