@@ -77,7 +77,7 @@ const MyRecomd = () => {
 <Helmets heading='MyRecomdation'></Helmets>
 <Zoom>
 <div className="p-6 bg-white shadow-lg rounded-lg">
-      <h2 className="text-2xl font-semibold text-gray-800 mb-6">Recommendations</h2>
+      <h2 className="text-2xl flex justify-center font-semibold text-gray-800 mb-6">Recommendations</h2>
       <div className="overflow-x-auto">
         <table className="w-full border-collapse border border-gray-300 rounded-lg">
           <thead className="bg-gradient-to-r from-[#18171a]  to-[#201e24] text-white">
@@ -94,13 +94,13 @@ const MyRecomd = () => {
             {recData.map((data) => (
               <tr
                 key={data._id}
-                className="hover:bg-gray-50 transition-colors border-b border-gray-200"
+                className="hover:bg-gray-50 dark:bg-gray-800 transition-colors border-b border-gray-200"
               >
-                <td className="px-4 py-3 text-gray-800 text-sm">{data.recQueryTitle}</td>
-                <td className="px-4 py-3 text-gray-800 text-sm">{data.recProductName}</td>
-                <td className="px-4 py-3 text-gray-800 text-sm">{data.recReason}</td>
-                <td className="px-4 py-3 text-gray-800 text-sm">{format(new Date(data.currentData), 'PP')}</td>
-                <td className="px-4 py-3 text-gray-800 text-sm">{data.owner_email}</td>
+                <td className="px-4 py-3 text-gray-800 dark:text-gray-100 text-sm">{data.recQueryTitle}</td>
+                <td className="px-4 py-3 text-gray-800 dark:text-gray-100 text-sm">{data.recProductName}</td>
+                <td className="px-4 py-3 text-gray-800 dark:text-gray-100 text-sm">{data.recReason}</td>
+                <td className="px-4 py-3 text-gray-800 dark:text-gray-100 text-sm">{format(new Date(data.currentData), 'PP')}</td>
+                <td className="px-4 py-3 text-gray-800 dark:text-gray-100 text-sm">{data.owner_email}</td>
                 <td className="px-4 py-3 text-center">
                   <button
                     onClick={() => handleDelete(data.recommand_id)}

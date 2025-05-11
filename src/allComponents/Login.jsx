@@ -90,7 +90,7 @@ console.log(location.state)
               </div>
 
               <div className="form-control relative">
-                <div onClick={handlePassShow} className='absolute right-3 top-12'>
+                <div onClick={handlePassShow} className='absolute right-3 dark:text-black top-12'>
                   {
                     showPass ? <FaRegEyeSlash /> : <IoEyeOutline />
 
@@ -117,7 +117,7 @@ console.log(location.state)
             </form>
             <div className="form-control  flex flex-col gap-3 mx-3">
               <button onClick={handleGoogle} className='btn md:text-sm lg:text-lg rounded-sm px-2  mb-6 w-11/12 mx-auto'> <img src="https://img.icons8.com/?size=30&id=17949&format=png&color=000000" alt="" /> countine with google</button>
-              <div className='text-md text-center  mb-3 pb-3 px-6'>Don't have any account? please <Link className='text-[#EF4444] ' to='/register'>Register Now</Link> </div>
+              <div className='text-md text-center dark:text-black  mb-3 pb-3 px-6'>Don't have any account? please <Link className='text-[#EF4444] ' to='/register'>Register Now</Link> </div>
 
             </div>
 

@@ -8,7 +8,7 @@ import { Zoom } from "react-reveal";
 import { Link } from "react-router-dom";
 
 
-// eslint-disable-next-line no-unused-vars
+
 const RecentQueryCard = ({post}) => {
     const   {_id,owner_email,productName,productBrand,productImageURL,queryTitle,boycottReason,recommendationCount,currentData,owner_photo,owner_disPlayName} = post;
     return (

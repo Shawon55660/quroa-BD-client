@@ -31,9 +31,9 @@ const OtherRecmond = () => {
 <>
 <Helmets heading='otherRecmondations'></Helmets>
 <Zoom>
-<div className="p-8 bg-gradient-to-r from-gray-50 to-gray-200 min-h-screen flex  justify-center">
-<div className="w-full max-w-6xl bg-white shadow-xl rounded-lg overflow-hidden">
-  <div className="bg-gradient-to-r from-gray-900 to-gray-800 text-white text-lg font-semibold p-5 text-center">
+<div className="p-8 dark:bg-gray-800  bg-gray-50   min-h-screen flex  justify-center">
+<div className="w-full max-w-6xl  bg-white shadow-xl rounded-lg overflow-hidden">
+  <div className="bg-gray-800 dark:text-gray-800 dark:bg-gray-50 text-white text-lg font-semibold p-5 text-center">
     Recommendations Overview
   </div>
   <div className="overflow-x-auto">
@@ -52,7 +52,7 @@ const OtherRecmond = () => {
           <tr
             key={data._id}
             className={`${
-              index % 2 === 0 ? "bg-gray-50" : "bg-white"
+              index % 2 === 0 ? "bg-gray-50 dark:bg-gray-600 dark:text-white" : "bg-white dark:bg-gray-700 dark:text-white"
             } hover:bg-indigo-100 transition-colors`}
           >
             <td className="px-6 py-4">{data.recQueryTitle}</td>

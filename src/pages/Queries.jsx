@@ -1,7 +1,7 @@
 import axios from "axios";
 import {  useEffect, useState } from "react";
 import Card from "../allComponents/Card";
-import bg from '../../src/assets/bg4.avif'
+
 
 import Loader from "../allComponents/Loader";
 import Helmets from "../sharedComponent/Helmets";
@@ -35,16 +35,16 @@ const Queries = () => {
 
      <>
      <Helmets heading='Queries'></Helmets>
-        <div className="pb-8" style={{ backgroundImage: `url(${bg})` }}>
+        <div  className="pb-8">
             <div className="flex items-center   justify-between w-11/12 mx-auto pt-4 ">
-             <div className="flex items-center border-black rounded-md  px-4 py-2 bg-white gap-2 border-[1px]"> <span> <IoIosSearch /></span> <input onChange={e=> setSearch(e.target.value)}
+             <div className="flex items-center border-black rounded-md  px-4 py-2 bg-white gap-2 border-[1px]"> <span className="dark: text-gray-800"> <IoIosSearch /></span> <input onChange={e=> setSearch(e.target.value)}
                 type="text"
                  placeholder="serach by Product name " 
                  className="outline-none " /></div>
                  <div className="lg:flex items-center  hidden  justify-center ">
-                <button onClick={()=>changeLayout('lg:grid-cols-1')} className={`${layout == 'lg:grid-cols-1' ? 'bg-red-600':'bg-gray-800 '} rounded-l-sm py-1 border-r-[1px]  px-6 text-white `}>Layout 1 </button>
-                <button onClick={()=>changeLayout('lg:grid-cols-2')} className={`${layout == 'lg:grid-cols-2' ? 'bg-red-600':'bg-gray-800 '}  py-1  px-6 text-white border-r-[1px]  `}>Layout 2 </button>
-                <button onClick={()=>changeLayout('lg:grid-cols-3')} className={ `${layout == 'lg:grid-cols-3' ? 'bg-red-600':'bg-gray-800 '} rounded-r-sm py-1  px-6 text-white `}> Layout 3</button>
+                <button onClick={()=>changeLayout('lg:grid-cols-1')} className={`${layout == 'lg:grid-cols-1' ? 'bg-[#EF4444] text-gray-100 ':'bg-gray-800 dark:bg-white dark:text-gray-800  '} rounded-l-sm py-1  px-6 text-white dark:border-gray-800  border-r-[1px]`}>Layout 1 </button>
+                <button onClick={()=>changeLayout('lg:grid-cols-2')} className={`${layout == 'lg:grid-cols-2' ? 'bg-[#EF4444] text-gray-100 ':'bg-gray-800 dark:bg-white dark:text-gray-800  '}  py-1  px-6 dark:border-gray-800 border-r-[1px] text-white`}>Layout 2 </button>
+                <button onClick={()=>changeLayout('lg:grid-cols-3')} className={ `${layout == 'lg:grid-cols-3' ? 'bg-[#EF4444] text-gray-100 ':'bg-gray-800 dark:bg-white dark:text-gray-800  '} rounded-r-sm py-1  px-6 text-white`}> Layout 3</button>
                 
             </div> 
             </div>

@@ -31,7 +31,7 @@ useEffect(()=>{
      <div className="w-11/12 mx-auto">
         
         <div className="w-11/12 mx-auto text-center" > <h2 className="text-2xl my-4 font-semibold">My Query List  </h2> 
-          <button className="bg-gray-900 text-white px-4 py-1 rounded-md  "><Link to='/my-queries/add-query'>Add More</Link></button></div>
+          <button className="bg-gray-800 dark:bg-gray-100 dark:text-gray-800 text-white px-4 py-1 rounded-md  "><Link to='/my-queries/add-query'>Add More</Link></button></div>
         {
           queryData?.length? <div  >
           {queryData.map(query=> <QueryCard key={query._id} fetchData = {fetchData} query={query}></QueryCard>)}

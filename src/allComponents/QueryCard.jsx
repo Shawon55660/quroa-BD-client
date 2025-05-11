@@ -60,18 +60,18 @@ const QueryCard = ({ query, fetchData }) => {
                     <div>
                         <h2 className="text-xl font-semibold pb-1">{queryTitle}</h2>
 
-                        <p className="pb-2 font-semibold text-gray-600"> {productName}</p>
+                        <p className="pb-2 font-semibold dark:text-gray-100 text-gray-600"> {productName}</p>
 
-                        <div className=" md:flex gap-8 pb-4 text-gray-600">
+                        <div className=" md:flex gap-8 pb-4 dark:text-gray-100 text-gray-600">
                             <div className="flex gap-2 items-center"> <MdWatchLater /><p> {format(new Date(currentData), 'P')}</p></div>
                             <div className="flex gap-4 items-center">  <LiaEyeSolid />  <p>{recommendationCount} recommended</p></div>
                         </div>
-                        <p className="pr-4 text-gray-600 text-sm ">{boycottReason}</p>
+                        <p className="pr-4 dark:text-gray-100 text-gray-600 text-sm ">{boycottReason}</p>
                     </div>
                    
                    <div className="flex mt-2 gap-2">
                    <button className=' bg-yellow-500 text-white px-4 py-1 rounded-t-md rounded-b-md'><Link to={`/my-queries/query-details/${_id}`}>Details</Link></button>
-                    <button className=' bg-gray-900 text-white px-4 py-1 rounded-t-md rounded-b-md'><Link to={`/my-queries/query-update/${_id}`} >Update</Link></button>
+                    <button className=' dark:bg-gray-100 dark:text-gray-800 bg-gray-800 text-white px-4 py-1 rounded-t-md rounded-b-md'><Link to={`/my-queries/query-update/${_id}`} >Update</Link></button>
 
                     <button onClick={() => handleDelete(_id)} className=' bg-red-500 text-white px-4 py-1 rounded-t-md rounded-b-md'>Delete</button>
                    </div>

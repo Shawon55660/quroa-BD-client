@@ -69,13 +69,13 @@ if(query.length) return <Loader></Loader>
        <Helmets heading='RecomandDetails'></Helmets>
        <Zoom>
             <div className="min-h-screen bg-gray-100 py-12">
-            <div className="max-w-7xl mx-auto bg-white shadow-xl rounded-lg p-6">
+            <div className="max-w-7xl mx-auto bg-white   dark:bg-gray-800 shadow-xl rounded-lg p-6">
                 <h2 className="text-3xl font-bold text-center text-[#EF4444] mb-8">Recommend This Query</h2>
                 <div className="grid lg:grid-cols-2 gap-8">
                     {/* Left Section - Owner Info */}
                     <div className="space-y-6">
-                        <div>
-                            <h3 className="text-2xl font-semibold text-gray-800">Owner Information</h3>
+                        <div className=''>
+                            <h3 className="text-2xl font-semibold dark:text-white  text-gray-800">Owner Information</h3>
                             <div className="flex items-center space-x-4">
                                {owner_photo?                                 <img src={owner_photo} alt="Owner" className="w-10 h-10 rounded-full object-cover" />:
                                <div className="avatar placeholder">
@@ -85,14 +85,14 @@ if(query.length) return <Loader></Loader>
                            </div>
 }
                                 <div>
-                                    <p className="font-medium text-gray-800">Name: <span className="text-[#EF4444]">{owner_disPlayName?owner_disPlayName:`Guest`}</span></p>
-                                    <p className="text-sm text-gray-500">Email: {owner_email}</p>
+                                    <p className="font-medium dark:text-white  text-gray-800">Name: <span className="text-[#EF4444]">{owner_disPlayName?owner_disPlayName:`Guest`}</span></p>
+                                    <p className="text-sm dark:text-gray-100  text-gray-500">Email: {owner_email}</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="bg-[#F9FAFB] p-4 rounded-md">
-                            <h4 className="text-lg font-medium text-gray-700">Product Details</h4>
+                        <div className="bg-[#F9FAFB] dark:text-gray-800  p-4 rounded-md">
+                            <h4 className="text-lg font-medium  text-gray-700">Product Details</h4>
                             <div className="space-y-2">
                                 <p><span className="font-semibold">Product Name:</span> {productName}</p>
                                 <p><span className="font-semibold">Product Brand:</span> {productBrand}</p>

@@ -118,7 +118,7 @@ const Register = () => {
              
              <div className='md:flex gap-2'>
              <div className="form-control w-full relative">
-                <div onClick={handlePassShow} className='absolute right-3 top-12'>
+                <div onClick={handlePassShow} className='absolute right-3 dark:text-black top-12'>
                   {
                     showPass ? <FaRegEyeSlash /> : <IoEyeOutline />
 
@@ -132,7 +132,7 @@ const Register = () => {
 
               </div>
               <div className="form-control w-full relative">
-                <div onClick={handlePassShow} className='absolute right-3 top-12'>
+                <div onClick={handlePassShow} className='absolute right-3 dark:text-black top-12'>
                   {
                     showPass ? <FaRegEyeSlash /> : <IoEyeOutline />
 
@@ -156,7 +156,7 @@ const Register = () => {
               <div className="form-control  mt-3">
                 <button className=" rounded-sm py-2 bg-[#EF4444]  text-white">Sign Up</button>
               </div>
-              <div className='text-md text-center  my-3'>Already have an account? please <Link className='text-[#EF4444] ' to='/login'>Login</Link> </div>
+              <div className='text-md text-center dark:text-black  my-3'>Already have an account? please <Link className='text-[#EF4444] ' to='/login'>Login</Link> </div>
             </form>
           </div>
 

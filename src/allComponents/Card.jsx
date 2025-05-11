@@ -33,7 +33,7 @@ const Card = ({ post }) => {
 
     return (
         <Zoom>
-            <div className="  bg-white w-full flex flex-col h-full px-4 my-4 items-start border-[1px] pb-2 rounded-sm">
+            <div className="  dark:bg-gray-800 bg-white w-full flex flex-col h-full px-4 my-4 items-start shadow-md border-gray-200 border-[1px] pb-2 rounded-sm">
 
 
 <div className=" flex-grow  w-full">
@@ -47,13 +47,13 @@ const Card = ({ post }) => {
                 </div>}
             <div>
                 <p className='font-semibold '>{owner_disPlayName ? owner_disPlayName : 'Guest '}</p>
-                <p className='text-xs text-gray-400'>{format(new Date(currentData), 'PP')}</p>
+                <p className='text-xs dark:text-gray-100 text-gray-400'>{format(new Date(currentData), 'PP')}</p>
             </div>
 
         </div>
         <h2 className="text-2xl font-semibold pb-1">{queryTitle}</h2>
 
-        <p className="pb-1 text-xl font-semibold text-gray-600"> {productName}</p>
+        <p className="pb-1 text-xl font-semibold dark:text-gray-100 text-gray-600"> {productName}</p>
 
 
         {/* <p className="w-11/12 text-gray-600 text-md border-b-[1px] py-3 ">{boycottReason}</p> */}
@@ -77,7 +77,7 @@ const Card = ({ post }) => {
             {productImageURL?<img referrerPolicy="no-referrer" className="   mx-auto w-auto object-cover h-full rounded-md " src={productImageURL} alt='' />: <img className=' mx-auto w-auto object-cover h-full rounded-md' src="https://img.freepik.com/free-vector/speech-bubble-question-mark-hand-drawn_78370-6191.jpg" alt="" /> }
 
         </div>
-        <div className=" flex gap-8 py-2 border-b-[1px] text-sm text-gray-600">
+        <div className=" flex gap-8 py-2 border-b-[1px] text-sm dark:text-gray-100 text-gray-600">
             <div className="flex gap-2 items-center"> <MdWatchLater /><p> {format(new Date(currentData), 'P')}</p></div>
             <div className="flex gap-2 items-center">  <LiaEyeSolid />  <p>{recommendationCount} recommended</p></div>
         </div>
@@ -90,7 +90,7 @@ const Card = ({ post }) => {
                         comment.map((comment) => (
                             <div key={comment._id} className='flex items-center gap-2 my-4'>
                                 <img className='w-10 rounded-full h-10' src={comment.recommender_photo} alt="" />
-                                <div className='py-[2px] px-2 bg-gray-200 border-[1px] rounded-md w-[300px]'>
+                                <div className='py-[2px] px-2  dark:bg-gray-800 bg-gray-200 border-[1px] rounded-md w-[300px]'>
                                     <p className='font-bold text-sm'>{comment.recommender_disPlayName ?comment.recommender_disPlayName:'Guest'  }</p>
                                     <p className='text-sm'>{comment.recProductName}</p>
                                 </div>
@@ -99,7 +99,7 @@ const Card = ({ post }) => {
                     ) : (
                         <div className='flex items-center gap-2 my-4'>
                             <img className='w-10 rounded-full h-10' src={comment[0]?.recommender_photo} alt="" />
-                            <div className='py-[2px] px-2 bg-gray-200 border-[1px] rounded-md w-[300px]'>
+                            <div className='py-[2px] px-2 dark:bg-gray-800 bg-gray-200 border-[1px] rounded-md w-[300px]'>
                                 <p className='font-bold text-sm'>{comment[0]?.recommender_disPlayName?comment[0]?.recommender_disPlayName:'Guest'}</p>
                                 <p className='text-sm'>{comment[0]?.recProductName}</p>
                             </div>
@@ -124,7 +124,7 @@ const Card = ({ post }) => {
 
 </div>
 <div className='text-center w-full'>
-    <Link to={`/queries/details/${_id}`}><button className=' bg-gray-900  text-sm text-white px-2 py-1 rounded-t-md rounded-b'> Recommendation </button></Link>
+    <Link to={`/queries/details/${_id}`}><button className=' dark:bg-white bg-gray-800 dark:text-gray-800  text-sm text-white px-2 py-1 rounded-t-md rounded-b'> Recommendation </button></Link>
 </div>
 
 </div>
