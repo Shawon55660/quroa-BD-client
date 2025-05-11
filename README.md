@@ -59,7 +59,4 @@
 
 1. **Clone the repository:**
 
-   ```bash
-   git clone https://github.com/your-username/quora-bd.git
-   cd quora-bd
  
