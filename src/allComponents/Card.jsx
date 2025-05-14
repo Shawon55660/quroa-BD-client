@@ -124,7 +124,7 @@ const Card = ({ post }) => {
 
 </div>
 <div className='text-center w-full'>
-    <Link to={`/queries/details/${_id}`}><button className=' dark:bg-white bg-gray-800 dark:text-gray-800  text-sm text-white px-2 py-1 rounded-t-md rounded-b'> Recommendation </button></Link>
+    <Link to={`/queries/details/${_id}`}><button className=' dark:bg-white bg-gray-800 dark:text-gray-800  text-sm text-white px-2 py-1 mb-4 rounded-t-md rounded-b'> Recommendation </button></Link>
 </div>
 
 </div>

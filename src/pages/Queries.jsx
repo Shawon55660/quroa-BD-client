@@ -42,9 +42,9 @@ const Queries = () => {
                  placeholder="serach by Product name " 
                  className="outline-none " /></div>
                  <div className="lg:flex items-center  hidden  justify-center ">
-                <button onClick={()=>changeLayout('lg:grid-cols-1')} className={`${layout == 'lg:grid-cols-1' ? 'bg-[#EF4444] text-gray-100 ':'bg-gray-800 dark:bg-white dark:text-gray-800  '} rounded-l-sm py-1  px-6 text-white dark:border-gray-800  border-r-[1px]`}>Layout 1 </button>
-                <button onClick={()=>changeLayout('lg:grid-cols-2')} className={`${layout == 'lg:grid-cols-2' ? 'bg-[#EF4444] text-gray-100 ':'bg-gray-800 dark:bg-white dark:text-gray-800  '}  py-1  px-6 dark:border-gray-800 border-r-[1px] text-white`}>Layout 2 </button>
-                <button onClick={()=>changeLayout('lg:grid-cols-3')} className={ `${layout == 'lg:grid-cols-3' ? 'bg-[#EF4444] text-gray-100 ':'bg-gray-800 dark:bg-white dark:text-gray-800  '} rounded-r-sm py-1  px-6 text-white`}> Layout 3</button>
+                <button onClick={()=>changeLayout('lg:grid-cols-1')} className={`${layout == 'lg:grid-cols-1' ? 'bg-[#EF4444] text-gray-100 ':'bg-gray-800 dark:bg-white dark:text-gray-800  '} rounded-l-sm py-1  px-6 text-white dark:border-gray-800  border-r-[1px]`}>  <img className='h-6' src="https://img.icons8.com/?size=40&id=33419&format=png&color=FFFFFF" alt="" />  </button>
+                <button onClick={()=>changeLayout('lg:grid-cols-2')} className={`${layout == 'lg:grid-cols-2' ? 'bg-[#EF4444] text-gray-100 ':'bg-gray-800 dark:bg-white dark:text-gray-800  '}  py-1  px-6 dark:border-gray-800 border-r-[1px] text-white`}> <img className="h-6 " src="https://img.icons8.com/?size=40&id=2692&format=png&color=FFFFFF" alt="" /> </button>
+                <button onClick={()=>changeLayout('lg:grid-cols-3')} className={ `${layout == 'lg:grid-cols-3' ? 'bg-[#EF4444] text-gray-100 ':'bg-gray-800 dark:bg-white dark:text-gray-800  '} rounded-r-sm py-1  px-6 text-white`}> <img className="h-6" src="https://img.icons8.com/?size=40&id=nQKfpKk1APTl&format=png&color=FFFFFF" alt="" /> </button>
                 
             </div> 
             </div>

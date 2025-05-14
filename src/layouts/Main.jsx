@@ -8,7 +8,7 @@ const Main = () => {
   const {setDarkMode,darkMode} = useContext(AuthContext)
 
   return (
-    <div className="max-w-[1440px] mx-auto">
+    <div className="w-full mx-auto">
       {/* Dark Mode Toggle Button */}
       <div className="fixed bottom-8 right-4 z-[100]">
         <button

@@ -1,8 +1,7 @@
 
 import { FaLinkedin } from "react-icons/fa";
 import { ImGithub } from "react-icons/im";
-import footer from '../../src/animation2/Questions-amico.png'
-import { Zoom } from "react-reveal";
+
 
 
 
@@ -11,7 +10,7 @@ const Footer = () => {
   
     return (
         <div>
-    <footer className=" grid md:grid-cols-2  w-full footer-center bg-gray-800 text-primary-content ">
+    <footer className=" pb-3 w-full footer-center bg-gray-800 text-primary-content ">
   <div className="flex flex-col gap-4">
   <aside>
 <img className="mx-auto my-2" src="https://img.icons8.com/?size=80&id=57SgDS4Ys9MV&format=png&color=FFFFFF" alt="" />
@@ -37,12 +36,7 @@ const Footer = () => {
    
   </nav>
   </div>
- <Zoom>
- <div className="md:w-6/12 w-10/12 p-2 mx-auto">
-  
-  <img className="w-full" src={footer} alt="footer img" />
-</div>
- </Zoom>
+
 
  
 </footer>
